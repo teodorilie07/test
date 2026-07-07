@@ -89,6 +89,7 @@ chokidar.watch(global.folderScss, { ignoreInitial: true }).on('all', (event, fil
 // -------- View engine + middleware -----------------------------------------
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+app.set('view cache', false);
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

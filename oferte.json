@@ -1,106 +1,154 @@
 [
   {
+    "id_produs": 6,
+    "pret_vechi": 8900,
+    "pret_nou": 7921,
+    "discount": 11,
+    "creata_la": 1783464413888,
+    "expira_la": 1783464653888
+  },
+  {
     "id_produs": 2,
     "pret_vechi": 1890,
-    "pret_nou": 1701,
-    "discount": 10,
-    "creata_la": 1783464037964,
-    "expira_la": 1783464127964
-  },
-  {
-    "id_produs": 12,
-    "pret_vechi": 780,
-    "pret_nou": 702,
-    "discount": 10,
-    "creata_la": 1783464037964,
-    "expira_la": 1783464127964
-  },
-  {
-    "id_produs": 7,
-    "pret_vechi": 220,
-    "pret_nou": 162.8,
+    "pret_nou": 1398.6,
     "discount": 26,
-    "creata_la": 1783464037964,
-    "expira_la": 1783464127964
-  },
-  {
-    "id_produs": 19,
-    "pret_vechi": 480,
-    "pret_nou": 316.8,
-    "discount": 34,
-    "creata_la": 1783464037964,
-    "expira_la": 1783464127964
+    "creata_la": 1783464413888,
+    "expira_la": 1783464653888
   },
   {
     "id_produs": 10,
     "pret_vechi": 1500,
-    "pret_nou": 1050,
-    "discount": 30,
-    "creata_la": 1783464053840,
-    "expira_la": 1783464293840
+    "pret_nou": 1185,
+    "discount": 21,
+    "creata_la": 1783464413888,
+    "expira_la": 1783464653888
+  },
+  {
+    "id_produs": 18,
+    "pret_vechi": 260,
+    "pret_nou": 197.6,
+    "discount": 24,
+    "creata_la": 1783464413888,
+    "expira_la": 1783464653888
+  },
+  {
+    "id_produs": 8,
+    "pret_vechi": 89,
+    "pret_nou": 72.09,
+    "discount": 19,
+    "creata_la": 1783464533922,
+    "expira_la": 1783464773922
   },
   {
     "id_produs": 4,
     "pret_vechi": 980,
-    "pret_nou": 715.4,
-    "discount": 27,
-    "creata_la": 1783464053840,
-    "expira_la": 1783464293840
+    "pret_nou": 666.4,
+    "discount": 32,
+    "creata_la": 1783464533922,
+    "expira_la": 1783464773922
   },
   {
     "id_produs": 20,
     "pret_vechi": 420,
-    "pret_nou": 310.8,
-    "discount": 26,
-    "creata_la": 1783464053840,
-    "expira_la": 1783464293840
+    "pret_nou": 277.2,
+    "discount": 34,
+    "creata_la": 1783464653917,
+    "expira_la": 1783464893917
   },
   {
-    "id_produs": 6,
-    "pret_vechi": 8900,
-    "pret_nou": 6408,
-    "discount": 28,
-    "creata_la": 1783464173841,
-    "expira_la": 1783464413841
+    "id_produs": 5,
+    "pret_vechi": 1560,
+    "pret_nou": 1138.8,
+    "discount": 27,
+    "creata_la": 1783464653917,
+    "expira_la": 1783464893917
   },
   {
-    "id_produs": 17,
-    "pret_vechi": 340,
-    "pret_nou": 238,
-    "discount": 30,
-    "creata_la": 1783464173841,
-    "expira_la": 1783464413841
+    "id_produs": 12,
+    "pret_vechi": 780,
+    "pret_nou": 631.8,
+    "discount": 19,
+    "creata_la": 1783464653917,
+    "expira_la": 1783464893917
   },
   {
     "id_produs": 1,
     "pret_vechi": 2450,
-    "pret_nou": 2156,
-    "discount": 12,
-    "creata_la": 1783464173841,
-    "expira_la": 1783464413841
+    "pret_nou": 1641.5,
+    "discount": 33,
+    "creata_la": 1783464773921,
+    "expira_la": 1783465013921
+  },
+  {
+    "id_produs": 7,
+    "pret_vechi": 220,
+    "pret_nou": 158.4,
+    "discount": 28,
+    "creata_la": 1783464893923,
+    "expira_la": 1783465133923
+  },
+  {
+    "id_produs": 12,
+    "pret_vechi": 780,
+    "pret_nou": 694.2,
+    "discount": 11,
+    "creata_la": 1783464893923,
+    "expira_la": 1783465133923
   },
   {
     "id_produs": 11,
     "pret_vechi": 2650,
-    "pret_nou": 2040.5,
-    "discount": 23,
-    "creata_la": 1783464293876,
-    "expira_la": 1783464533876
+    "pret_nou": 1908,
+    "discount": 28,
+    "creata_la": 1783464893923,
+    "expira_la": 1783465133923
   },
   {
-    "id_produs": 3,
-    "pret_vechi": 1120,
-    "pret_nou": 1008,
-    "discount": 10,
-    "creata_la": 1783464293876,
-    "expira_la": 1783464533876
+    "id_produs": 6,
+    "pret_vechi": 8900,
+    "pret_nou": 7654,
+    "discount": 14,
+    "creata_la": 1783464904282,
+    "expira_la": 1783465144282
   },
   {
-    "id_produs": 15,
-    "pret_vechi": 640,
-    "pret_nou": 512,
-    "discount": 20,
-    "creata_la": 1783464293876,
-    "expira_la": 1783464533876
+    "id_produs": 8,
+    "pret_vechi": 89,
+    "pret_nou": 59.63,
+    "discount": 33,
+    "creata_la": 1783464904282,
+    "expira_la": 1783465144282
+  },
+  {
+    "id_produs": 14,
+    "pret_vechi": 1450,
+    "pret_nou": 971.5,
+    "discount": 33,
+    "creata_la": 1783464904282,
+    "expira_la": 1783465144282
+  },
+  {
+    "id_produs": 18,
+    "pret_vechi": 260,
+    "pret_nou": 215.8,
+    "discount": 17,
+    "creata_la": 1783465024283,
+    "expira_la": 1783465264283
+  },
+  {
+    "id_produs": 5,
+    "pret_vechi": 1560,
+    "pret_nou": 1326,
+    "discount": 15,
+    "creata_la": 1783465024283,
+    "expira_la": 1783465264283
+  },
+  {
+    "id_produs": 20,
+    "pret_vechi": 420,
+    "pret_nou": 298.2,
+    "discount": 29,
+    "creata_la": 1783465024283,
+    "expira_la": 1783465264283
   }
 ]

@@ -1,227 +1,252 @@
 // =============================================================================
-// custom.scss - Customizare Bootstrap 5 pentru Atelier Tuning
-// Compilat automat -> /app/resurse/css/custom.css la pornire si on-the-fly.
+// custom.scss - Tuning Pro Center (soft pastel school-project vibe)
+// Compilat automat -> /app/resurse/css/custom.css
 // =============================================================================
 
 // -------- 1. Suprascriere variabile Bootstrap ---------------------------------
 
-// Culori tema DEFAULT (dark racing) - overrides pentru variabilele Bootstrap
-$primary:       #E63946;   // Rosu racing
-$secondary:     #FF8C00;   // Portocaliu accent
-$success:       #2A9D8F;   // Verde badge "cel mai ieftin"
-$warning:       #FFB703;   // Galben timer oferta
-$danger:        #D62828;
-$info:          #4CC9F0;
-$light:         #F8F9FA;
-$dark:          #0B0C10;
-$body-bg:       #0B0C10;
-$body-color:    #FFFFFF;
+// Palete pastel din pozele originale
+$primary:       #283593;   // navy blue (titluri, linkuri)
+$secondary:     #7e57c2;   // lavender
+$success:       #4caf50;   // verde badge
+$warning:       #ffb300;   // galben pt oferte
+$danger:        #e53935;   // rosu discret
+$info:          #26c6da;   // cyan
+$light:         #e0f7fa;   // background principal mint cyan
+$dark:          #1a237e;   // navy inchis pentru text
 
-// Font families - RACING/INDUSTRIAL (nu Inter/Roboto)
-$font-family-sans-serif: 'Exo 2', 'Segoe UI', system-ui, sans-serif;
+$body-bg:       #e0f7fa;
+$body-color:    #1a237e;
+
+// Font families - soft chunky
+$font-family-sans-serif: 'Nunito', 'Segoe UI', system-ui, sans-serif;
 $font-family-base:       $font-family-sans-serif;
-$headings-font-family:   'Rajdhani', 'Impact', sans-serif;
-$headings-font-weight:   700;
-$headings-letter-spacing: -0.02em;
+$headings-font-family:   'Bagel Fat One', 'Fredoka', cursive;
+$headings-font-weight:   400;
+$headings-color:         #283593;
 
-// Dimensiuni titluri (mai imposante)
-$h1-font-size: 3.25rem;
-$h2-font-size: 2.5rem;
-$h3-font-size: 2rem;
-$h4-font-size: 1.5rem;
-$h5-font-size: 1.25rem;
+// Dimensiuni titluri (echilibrate)
+$h1-font-size: 2.5rem;
+$h2-font-size: 1.9rem;
+$h3-font-size: 1.5rem;
+$h4-font-size: 1.25rem;
+$h5-font-size: 1.1rem;
 $h6-font-size: 1rem;
 
-// Border radius mic (aspect brutalist/mecanic)
-$border-radius:       2px;
-$border-radius-sm:    2px;
-$border-radius-lg:    4px;
-$border-radius-xl:    6px;
+// Border radius - rotunjit
+$border-radius:       10px;
+$border-radius-sm:    8px;
+$border-radius-lg:    16px;
+$border-radius-xl:    20px;
 
 // Breakpoints customizate pt md si lg
 $grid-breakpoints: (
   xs: 0,
   sm: 576px,
-  md: 800px,   // customizat
-  lg: 1080px,  // customizat
+  md: 800px,
+  lg: 1080px,
   xl: 1200px,
   xxl: 1400px
 );
 
 // Butoane
-$btn-padding-y:       0.6rem;
-$btn-padding-x:       1.4rem;
+$btn-padding-y:       0.5rem;
+$btn-padding-x:       1.1rem;
 $btn-font-weight:     600;
-$btn-border-radius:   2px;
-$btn-font-family:     'Rajdhani', sans-serif;
+$btn-border-radius:   10px;
+$btn-font-family:     'Nunito', sans-serif;
 
 // Inputuri
-$input-bg:            #1F2833;
-$input-color:         #FFFFFF;
-$input-border-color:  #333333;
+$input-bg:            #FFFFFF;
+$input-color:         #1a237e;
+$input-border-color:  #b39ddb;
 $input-focus-border-color: $primary;
-$input-focus-bg:      #1F2833;
-$input-focus-color:   #FFFFFF;
-$input-padding-y:     0.55rem;
-$input-placeholder-color: #6c757d;
+$input-focus-bg:      #FFFFFF;
+$input-focus-color:   #1a237e;
+$input-padding-y:     0.5rem;
+$input-placeholder-color: #9575cd;
+$input-border-radius: 10px;
 
-// Form select (multi-select dark)
-$form-select-bg:      #1F2833;
-$form-select-color:   #FFFFFF;
-$form-select-border-color: #333333;
+// Form select
+$form-select-bg:      #FFFFFF;
+$form-select-color:   #1a237e;
+$form-select-border-color: #b39ddb;
+$form-select-border-radius: 10px;
 
 // Card
-$card-bg:             #1F2833;
-$card-border-color:   #333333;
-$card-color:          #FFFFFF;
+$card-bg:             #FFFFFF;
+$card-border-color:   #b3e5fc;
+$card-color:          #1a237e;
+$card-border-radius:  16px;
 
 // Navbar
-$navbar-dark-color:   rgba(255, 255, 255, 0.85);
-$navbar-dark-hover-color: #E63946;
-$navbar-dark-active-color: #E63946;
+$navbar-light-color:   #1a237e;
+$navbar-light-hover-color: #7e57c2;
+$navbar-light-active-color: #283593;
 
 // Range (buline +50%)
-$form-range-track-height:       0.7rem;
-$form-range-track-bg:           #333333;
+$form-range-track-height:       0.6rem;
+$form-range-track-bg:           #b39ddb;
 $form-range-track-border-radius: 1rem;
-$form-range-thumb-width:         1.5rem;   // 50% marit
-$form-range-thumb-height:        1.5rem;
+$form-range-thumb-width:         1.4rem;
+$form-range-thumb-height:        1.4rem;
 $form-range-thumb-bg:            $primary;
 $form-range-thumb-active-bg:     $secondary;
 $form-range-thumb-border:        2px solid #FFFFFF;
 
 // Modal
-$modal-content-bg:    #1F2833;
-$modal-content-color: #FFFFFF;
-$modal-content-border-color: #333333;
+$modal-content-bg:    #FFFFFF;
+$modal-content-color: #1a237e;
+$modal-content-border-color: #b3e5fc;
 
 // Table
-$table-color:         #FFFFFF;
-$table-bg:            transparent;
-$table-border-color:  #333333;
-$table-striped-bg:    rgba(255, 255, 255, 0.03);
+$table-color:         #1a237e;
+$table-bg:            #FFFFFF;
+$table-border-color:  #b3e5fc;
+$table-striped-bg:    #f1f8ff;
+$table-head-bg:       #b3e5fc;
 
 // Dropdown
-$dropdown-bg:         #1F2833;
-$dropdown-color:      #FFFFFF;
-$dropdown-link-color: #FFFFFF;
-$dropdown-link-hover-bg: $primary;
-$dropdown-link-hover-color: #FFFFFF;
-$dropdown-border-color: #333333;
+$dropdown-bg:         #FFFFFF;
+$dropdown-color:      #1a237e;
+$dropdown-link-color: #1a237e;
+$dropdown-link-hover-bg: #d1c4e9;
+$dropdown-link-hover-color: #283593;
+$dropdown-border-color: #b39ddb;
+$dropdown-border-radius: 12px;
 
 // -------- 2. Import Bootstrap ---------------------------------------
 @import "bootstrap/scss/bootstrap";
 
-// -------- 3. Iconites & Google Fonts ---------------------------------
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600&family=Rajdhani:wght@500;600;700&display=swap');
+// -------- 3. Iconites & Google Fonts (font-uri chunky + rounded) ------
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Nunito:wght@400;600;700;800&family=Fredoka:wght@500;600;700&display=swap');
 @import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css');
 
 // -------- 4. Variabile CSS (pentru schimbare tema JS) ----------------
 :root {
-  --tuning-primary:    #{$primary};
-  --tuning-secondary:  #{$secondary};
-  --tuning-bg:         #{$body-bg};
-  --tuning-surface:    #1F2833;
-  --tuning-surface-hover: #2B3642;
-  --tuning-text:       #FFFFFF;
-  --tuning-text-muted: #C5C6C7;
-  --tuning-border:     #333333;
-  --tuning-badge-new:  #E63946;
-  --tuning-badge-cheapest: #2A9D8F;
-  --tuning-timer:      #FFB703;
-  --tuning-shadow:     0 4px 20px rgba(230, 57, 70, 0.15);
-  --tuning-noise-op:   0.03;
+  --tuning-primary:    #283593;   // navy blue
+  --tuning-secondary:  #7e57c2;   // lavender
+  --tuning-bg:         #e0f7fa;   // mint cyan body
+  --tuning-nav:        #d1c4e9;   // navbar lavender
+  --tuning-surface:    #FFFFFF;   // card
+  --tuning-surface-alt: #f1f8ff;  // alt row
+  --tuning-surface-mint: #c8f5d8; // anunturi mint
+  --tuning-header-tab: #b3e5fc;   // header tabel cyan
+  --tuning-text:       #1a237e;   // navy inchis
+  --tuning-text-muted: #5c6bc0;
+  --tuning-border:     #b3e5fc;
+  --tuning-border-strong: #7986cb;
+  --tuning-badge-new:  #ec407a;
+  --tuning-badge-cheapest: #43a047;
+  --tuning-timer:      #ff7043;
+  --tuning-shadow:     0 2px 10px rgba(40, 53, 147, 0.1);
+  --tuning-shadow-hover: 0 6px 20px rgba(40, 53, 147, 0.18);
 }
 
-// Tema modern industrial
-[data-tuning-theme="industrial"] {
-  --tuning-primary:    #F4D03F;
-  --tuning-secondary:  #E67E22;
-  --tuning-bg:         #121212;
-  --tuning-surface:    #2C3E50;
-  --tuning-surface-hover: #34495E;
-  --tuning-text:       #F8F9FA;
-  --tuning-text-muted: #BDC3C7;
-  --tuning-border:     #454545;
-  --tuning-badge-new:  #F4D03F;
-  --tuning-badge-cheapest: #27AE60;
-  --tuning-timer:      #E74C3C;
-  --tuning-shadow:     0 4px 20px rgba(244, 208, 63, 0.18);
-}
-
-// Tema light
-[data-tuning-theme="light"] {
-  --tuning-primary:    #D90429;
-  --tuning-secondary:  #2B2D42;
-  --tuning-bg:         #F8F9FA;
+// Tema alternativa 2 - Peach warm
+[data-tuning-theme="peach"] {
+  --tuning-primary:    #d84315;
+  --tuning-secondary:  #ff8a65;
+  --tuning-bg:         #fff3e0;
+  --tuning-nav:        #ffccbc;
   --tuning-surface:    #FFFFFF;
-  --tuning-surface-hover: #E9ECEF;
-  --tuning-text:       #1A1A1D;
-  --tuning-text-muted: #4A4E69;
-  --tuning-border:     #DEE2E6;
-  --tuning-badge-new:  #D90429;
-  --tuning-badge-cheapest: #028090;
-  --tuning-timer:      #F77F00;
-  --tuning-shadow:     0 4px 20px rgba(217, 4, 41, 0.10);
+  --tuning-surface-alt: #fff8f3;
+  --tuning-surface-mint: #ffe0b2;
+  --tuning-header-tab: #ffab91;
+  --tuning-text:       #bf360c;
+  --tuning-text-muted: #a1522c;
+  --tuning-border:     #ffcc80;
+  --tuning-border-strong: #ff8a65;
+  --tuning-badge-new:  #d81b60;
+  --tuning-badge-cheapest: #388e3c;
+  --tuning-timer:      #e64a19;
+  --tuning-shadow:     0 2px 10px rgba(216, 67, 21, 0.1);
+  --tuning-shadow-hover: 0 6px 20px rgba(216, 67, 21, 0.18);
+}
+
+// Tema alternativa 3 - Dark cozy (nu racing, doar dark simplu)
+[data-tuning-theme="dark"] {
+  --tuning-primary:    #90caf9;
+  --tuning-secondary:  #ce93d8;
+  --tuning-bg:         #1e2233;
+  --tuning-nav:        #2c3654;
+  --tuning-surface:    #29314d;
+  --tuning-surface-alt: #212843;
+  --tuning-surface-mint: #2d4a3d;
+  --tuning-header-tab: #37476b;
+  --tuning-text:       #e3f2fd;
+  --tuning-text-muted: #90a4ae;
+  --tuning-border:     #37476b;
+  --tuning-border-strong: #5c6bc0;
+  --tuning-badge-new:  #f48fb1;
+  --tuning-badge-cheapest: #81c784;
+  --tuning-timer:      #ffab91;
+  --tuning-shadow:     0 2px 10px rgba(0, 0, 0, 0.3);
+  --tuning-shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.5);
 }
 
 // -------- 5. Bindings variabile CSS -> Bootstrap ---------------------
 body {
   background: var(--tuning-bg) !important;
   color: var(--tuning-text) !important;
-  font-family: 'Exo 2', sans-serif;
+  font-family: 'Nunito', sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
-  position: relative;
   min-height: 100vh;
 }
 
-// Noise overlay
-body::before {
-  content: '';
-  position: fixed; inset: 0;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.4'/></svg>");
-  opacity: var(--tuning-noise-op);
-  pointer-events: none;
-  z-index: 0;
-  mix-blend-mode: overlay;
+h1, h2, h3, h4, h5, h6, .brand-title {
+  font-family: 'Bagel Fat One', 'Fredoka', cursive;
+  color: var(--tuning-primary) !important;
+  letter-spacing: 0.01em;
 }
+
+a { color: var(--tuning-primary); }
+a:hover { color: var(--tuning-secondary); }
 
 .card {
   background: var(--tuning-surface) !important;
   color: var(--tuning-text) !important;
-  border-color: var(--tuning-border) !important;
-  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  border: 2px solid var(--tuning-border) !important;
+  border-radius: 16px !important;
+  box-shadow: var(--tuning-shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 .card:hover {
-  border-color: var(--tuning-primary) !important;
-  box-shadow: var(--tuning-shadow);
+  transform: translateY(-4px);
+  box-shadow: var(--tuning-shadow-hover);
+  border-color: var(--tuning-border-strong) !important;
 }
 
 .form-control, .form-select {
   background: var(--tuning-surface) !important;
   color: var(--tuning-text) !important;
-  border-color: var(--tuning-border) !important;
+  border: 1px solid var(--tuning-border-strong) !important;
+  border-radius: 10px;
 }
 .form-control:focus, .form-select:focus {
   background: var(--tuning-surface) !important;
   color: var(--tuning-text) !important;
   border-color: var(--tuning-primary) !important;
-  box-shadow: 0 0 0 0.2rem rgba(230, 57, 70, 0.15) !important;
-}
-
-[data-tuning-theme="light"] {
-  body { background: var(--tuning-bg) !important; color: var(--tuning-text) !important; }
-  .card { color: #1A1A1D !important; }
-  .navbar { background: #1A1A1D !important; }
-  .form-control, .form-select { color: #1A1A1D !important; }
-  .table { color: #1A1A1D !important; }
+  box-shadow: 0 0 0 0.2rem rgba(126, 87, 194, 0.2) !important;
 }
 
 // Table
 .table {
   color: var(--tuning-text) !important;
+  background: var(--tuning-surface) !important;
   border-color: var(--tuning-border) !important;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.table > thead {
+  background: var(--tuning-header-tab) !important;
+  color: var(--tuning-primary) !important;
+}
+.table > thead th {
+  background: var(--tuning-header-tab) !important;
+  color: var(--tuning-primary) !important;
+  border-bottom: 2px solid var(--tuning-border-strong) !important;
 }
 
 // Modal
@@ -229,92 +254,113 @@ body::before {
   background: var(--tuning-surface) !important;
   color: var(--tuning-text) !important;
   border-color: var(--tuning-border) !important;
+  border-radius: 16px !important;
 }
 
 // Dropdown
 .dropdown-menu {
   background: var(--tuning-surface) !important;
-  border-color: var(--tuning-border) !important;
+  border-color: var(--tuning-border-strong) !important;
+  border-radius: 12px !important;
+  box-shadow: var(--tuning-shadow-hover);
 }
 .dropdown-item { color: var(--tuning-text) !important; }
-.dropdown-item:hover { background: var(--tuning-primary) !important; color: #FFF !important; }
+.dropdown-item:hover { background: var(--tuning-nav) !important; color: var(--tuning-primary) !important; }
 
-// -------- 6. Butoane skewed CTA -------------------------------------
-.btn-tuning {
-  background: var(--tuning-primary);
-  color: #FFFFFF;
-  border: 2px solid var(--tuning-primary);
-  transform: skewX(-8deg);
-  text-transform: uppercase;
-  font-family: 'Rajdhani', sans-serif;
+// Butoane - rotunde, cu culoare navy/lavender
+.btn-primary {
+  background: var(--tuning-primary) !important;
+  border-color: var(--tuning-primary) !important;
+  color: #FFFFFF !important;
+  border-radius: 10px !important;
   font-weight: 700;
-  letter-spacing: 0.05em;
-  transition: background 0.25s, color 0.25s, transform 0.25s;
+  transition: all 0.2s ease;
 }
-.btn-tuning > * { display: inline-block; transform: skewX(8deg); }
-.btn-tuning:hover {
-  background: transparent;
-  color: var(--tuning-primary);
-  transform: skewX(-8deg) translateY(-2px);
-}
-.btn-tuning-outline {
-  background: transparent;
-  color: var(--tuning-primary);
-  border: 2px solid var(--tuning-primary);
-  transform: skewX(-8deg);
-  text-transform: uppercase;
-  font-family: 'Rajdhani', sans-serif;
-  font-weight: 700;
-}
-.btn-tuning-outline > * { display: inline-block; transform: skewX(8deg); }
-.btn-tuning-outline:hover {
-  background: var(--tuning-primary);
-  color: #FFF;
+.btn-primary:hover {
+  background: var(--tuning-secondary) !important;
+  border-color: var(--tuning-secondary) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(126, 87, 194, 0.35);
 }
 
-// -------- 7. Range CSS-corectare pentru culori dinamice --------------
+.btn-outline-primary {
+  color: var(--tuning-primary) !important;
+  border: 2px solid var(--tuning-primary) !important;
+  background: transparent;
+  border-radius: 10px !important;
+  font-weight: 700;
+}
+.btn-outline-primary:hover {
+  background: var(--tuning-primary) !important;
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
+}
+
+// -------- 6. Range - custom colors dinamice --------------
 .form-range::-webkit-slider-thumb {
   background: var(--tuning-primary) !important;
   border: 2px solid #FFFFFF !important;
-  width: 1.5rem !important;
-  height: 1.5rem !important;
-  box-shadow: 0 0 8px var(--tuning-primary);
+  width: 1.4rem !important;
+  height: 1.4rem !important;
+  box-shadow: 0 2px 6px rgba(40, 53, 147, 0.35);
 }
 .form-range::-moz-range-thumb {
   background: var(--tuning-primary) !important;
   border: 2px solid #FFFFFF !important;
-  width: 1.5rem !important;
-  height: 1.5rem !important;
+  width: 1.4rem !important;
+  height: 1.4rem !important;
 }
 .form-range::-webkit-slider-runnable-track {
-  background: var(--tuning-border) !important;
-  height: 0.7rem !important;
+  background: var(--tuning-border-strong) !important;
+  height: 0.6rem !important;
   border-radius: 1rem;
 }
 
-// -------- 8. Navbar overrides ---------------------------------------
+// -------- 7. Navbar - lavender pastel ---------------
 .navbar-tuning {
-  background: rgba(11, 12, 16, 0.85) !important;
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--tuning-border);
-  position: sticky;
-  top: 0;
-  z-index: 1030;
+  background: var(--tuning-nav) !important;
+  border-bottom: 2px solid var(--tuning-border-strong);
+  padding: 0.6rem 1rem;
 }
 .navbar-tuning .nav-link {
-  color: var(--tuning-text) !important;
-  font-family: 'Rajdhani', sans-serif;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition: color 0.2s;
-}
-.navbar-tuning .nav-link:hover { color: var(--tuning-primary) !important; }
-.navbar-tuning .navbar-brand {
-  font-family: 'Rajdhani', sans-serif;
+  color: var(--tuning-primary) !important;
+  font-family: 'Nunito', sans-serif;
   font-weight: 700;
-  font-size: 1.6rem;
-  color: var(--tuning-text) !important;
-  letter-spacing: -0.02em;
+  padding: 0.5rem 1rem !important;
+  transition: color 0.2s;
+  border-radius: 8px;
 }
-.navbar-tuning .navbar-brand strong { color: var(--tuning-primary); }
+.navbar-tuning .nav-link:hover { 
+  color: var(--tuning-secondary) !important; 
+  background: rgba(255,255,255,0.4);
+}
+.navbar-tuning .nav-link.active {
+  color: var(--tuning-primary) !important;
+  background: rgba(255,255,255,0.5);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+// Brand header (deasupra navbar) - Tuning Pro Center chunky
+.brand-header {
+  background: var(--tuning-bg);
+  padding: 1.2rem 1.5rem 0.6rem;
+  border-bottom: 0;
+}
+.brand-header .brand-title {
+  font-family: 'Bagel Fat One', cursive;
+  font-size: 2.6rem;
+  color: var(--tuning-primary);
+  line-height: 1;
+  margin: 0;
+  display: inline-block;
+}
+.brand-header .brand-tagline {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.95rem;
+  color: var(--tuning-text-muted);
+  margin: 0.2rem 0 0;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}

@@ -1,126 +1,168 @@
 // =============================================================================
-// componente.scss - Stiluri custom pentru componente proiect
+// componente.scss - Componente Tuning Pro Center (soft pastel)
 // =============================================================================
 
-// -------- Hero --------------------------------------------------------------
-.hero-tuning {
-  min-height: 88vh;
+// -------- Section wrapper - box alb cu border pastel + margine ----
+.section-tuning {
+  background: var(--tuning-surface);
+  border: 2px solid var(--tuning-border);
+  border-radius: 16px;
+  padding: 1.8rem 2rem;
+  margin: 1.2rem auto;
+  max-width: 1500px;
   position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  background:
-    linear-gradient(135deg, rgba(11,12,16,0.92) 0%, rgba(11,12,16,0.55) 60%, rgba(11,12,16,0.85) 100%),
-    url('https://images.unsplash.com/photo-1747115986467-a4510549984f?w=1600&q=85') center/cover no-repeat;
+  z-index: 1;
+  box-shadow: var(--tuning-shadow);
 }
-.hero-tuning .badge-hero {
-  display: inline-block;
-  padding: 0.35rem 0.8rem;
-  border: 1px solid var(--tuning-primary);
+.section-tuning h2 {
+  font-family: 'Bagel Fat One', cursive;
   color: var(--tuning-primary);
-  font-family: 'Rajdhani', sans-serif;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  background: rgba(230, 57, 70, 0.08);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--tuning-header-tab);
+}
+.section-tuning h2 .stripe {
+  display: none; // eliminam stripe-ul agresiv
+}
+
+// -------- Hero (soft, in stilul referintei) ---------------------------------
+.hero-tuning {
+  background: var(--tuning-surface);
+  border: 2px solid var(--tuning-border);
+  border-radius: 16px;
+  padding: 2rem 2.2rem;
+  margin: 1.2rem auto;
+  max-width: 1500px;
+  min-height: auto;
+  box-shadow: var(--tuning-shadow);
 }
 .hero-tuning h1 {
-  font-size: clamp(2.5rem, 6.5vw, 5.5rem);
-  line-height: 0.95;
-  color: #FFFFFF;
-  text-transform: uppercase;
-  font-weight: 700;
+  font-family: 'Bagel Fat One', cursive;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  color: var(--tuning-primary);
+  margin-bottom: 0.5rem;
 }
-.hero-tuning h1 .accent { color: var(--tuning-primary); }
-.hero-tuning .lead { color: rgba(255,255,255,0.85); max-width: 640px; font-size: 1.15rem; }
+.hero-tuning h1 .accent { color: var(--tuning-secondary); }
+.hero-tuning .badge-hero {
+  display: inline-block;
+  padding: 0.25rem 0.7rem;
+  background: var(--tuning-header-tab);
+  color: var(--tuning-primary);
+  font-weight: 700;
+  border-radius: 12px;
+  font-size: 0.85rem;
+}
+.hero-tuning .lead {
+  color: var(--tuning-text);
+  max-width: 800px;
+  font-size: 1.05rem;
+  margin-top: 0.5rem;
+}
 
-// Text animat orizontal (Faza 3 – keyframes, responsive fara scroll)
+// -------- Marquee - stil pastel discret ---------------------------
 .marquee-tuning {
   overflow: hidden;
-  padding: 1rem 0;
-  background: var(--tuning-surface);
-  border-top: 1px solid var(--tuning-border);
-  border-bottom: 1px solid var(--tuning-border);
+  padding: 0.8rem 0;
+  background: var(--tuning-nav);
+  border-top: 2px solid var(--tuning-border-strong);
+  border-bottom: 2px solid var(--tuning-border-strong);
+  margin: 1.2rem auto;
+  max-width: 1500px;
+  border-radius: 12px;
 }
 .marquee-tuning-track {
   display: inline-block;
   white-space: nowrap;
   padding-left: 100%;
-  animation: marqueeMove 25s linear infinite;
-  font-family: 'Rajdhani', sans-serif;
+  animation: marqueeMove 30s linear infinite;
+  font-family: 'Nunito', sans-serif;
   font-weight: 700;
-  font-size: 1.3rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--tuning-text);
+  font-size: 1.05rem;
+  color: var(--tuning-primary);
 }
 .marquee-tuning-track .sep {
-  color: var(--tuning-primary);
-  margin: 0 1.5rem;
+  color: var(--tuning-secondary);
+  margin: 0 1rem;
+  font-weight: 800;
 }
 @keyframes marqueeMove {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-100%); }
 }
 
-// -------- Background fix + schimbare imagine la T sec (Faza 3) ---------------
+// -------- Background fix slider (varianta light + subtila) ---------------
 .bg-fix-slider {
-  background-attachment: fixed;
   background-size: cover;
   background-position: center;
   transition: background-image 1s ease;
-  min-height: 45vh;
+  min-height: 30vh;
   position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  margin: 1.2rem auto;
+  max-width: 1500px;
 }
 .bg-fix-slider::after {
   content: ''; position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.85));
+  background: linear-gradient(180deg, rgba(224, 247, 250, 0.35), rgba(224, 247, 250, 0.85));
 }
-.bg-fix-slider > .container { position: relative; z-index: 2; }
+[data-tuning-theme="dark"] .bg-fix-slider::after {
+  background: linear-gradient(180deg, rgba(30, 34, 51, 0.4), rgba(30, 34, 51, 0.85));
+}
+.bg-fix-slider > .container-fluid { position: relative; z-index: 2; }
 
 // -------- Column-count (Faza 3, o singura coloana pe mic/mediu) --------------
 .col-count-block {
   column-count: 3;
-  column-gap: 2.5rem;
-  column-rule: 2px dashed var(--tuning-primary);
-  font-family: 'Exo 2', sans-serif;
+  column-gap: 2rem;
+  column-rule: 1px dashed var(--tuning-border-strong);
+  font-family: 'Nunito', sans-serif;
   line-height: 1.6;
-  color: var(--tuning-text-muted);
+  color: var(--tuning-text);
 }
 @media (max-width: 991.98px) { .col-count-block { column-count: 1; column-rule: none; } }
 
 // ::selection customizat
 ::selection {
-  background: var(--tuning-primary);
+  background: var(--tuning-secondary);
   color: #FFFFFF;
   text-shadow: none;
 }
 
-// -------- Product card ------------------------------------------------------
+// -------- Product card - stil card scoala, alb cu border pastel --------------
 .product-card {
   position: relative;
   overflow: hidden;
-  border-radius: 2px;
-  border: 1px solid var(--tuning-border);
+  border-radius: 16px;
+  border: 2px solid var(--tuning-border);
+  background: var(--tuning-surface);
   height: 100%;
   display: flex;
   flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--tuning-shadow-hover);
+  border-color: var(--tuning-border-strong);
 }
 .product-card .card-media {
   position: relative;
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  background: #000;
+  background: #f5f5f5;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
 }
 .product-card .card-media img,
 .product-card .card-media .carousel-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.4s ease;
 }
-.product-card:hover .card-media img { transform: scale(1.06); }
+.product-card:hover .card-media img { transform: scale(1.05); }
 
 .product-card .badges-wrap {
   position: absolute;
@@ -134,42 +176,42 @@
   pointer-events: none;
 }
 .badge-tuning {
-  font-family: 'Rajdhani', sans-serif;
-  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
   font-size: 0.75rem;
-  padding: 0.3rem 0.6rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  border-radius: 2px;
+  padding: 0.3rem 0.65rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
 }
 .badge-nou { background: var(--tuning-badge-new); color: #FFFFFF; }
-.badge-oferta { background: var(--tuning-timer); color: #0B0C10; }
+.badge-oferta { background: var(--tuning-timer); color: #FFFFFF; }
 .badge-cheapest { background: var(--tuning-badge-cheapest); color: #FFFFFF; }
 
 .product-card .card-body {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  padding: 1rem;
+  padding: 1rem 1.1rem;
   flex: 1;
 }
 .product-card .card-title {
-  font-family: 'Rajdhani', sans-serif;
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: var(--tuning-text);
+  font-family: 'Bagel Fat One', cursive;
+  font-weight: 400;
+  font-size: 1.15rem;
+  color: var(--tuning-primary);
   margin: 0;
+  line-height: 1.2;
 }
 .product-card .card-meta {
   font-size: 0.82rem;
   color: var(--tuning-text-muted);
   display: flex;
-  gap: 0.5rem;
+  gap: 0.6rem;
   flex-wrap: wrap;
 }
 .product-card .card-price {
-  font-family: 'Rajdhani', sans-serif;
-  font-weight: 700;
+  font-family: 'Bagel Fat One', cursive;
+  font-weight: 400;
   font-size: 1.35rem;
   color: var(--tuning-primary);
   margin-top: auto;
@@ -180,80 +222,81 @@
   font-size: 0.95rem;
   margin-right: 0.5rem;
   font-weight: 400;
+  font-family: 'Nunito', sans-serif;
 }
 
-// -------- Filter panel ------------------------------------------------------
+// -------- Filter panel - box alb cu border ------------
 .filter-panel {
   background: var(--tuning-surface);
-  border: 1px solid var(--tuning-border);
+  border: 2px solid var(--tuning-border);
   padding: 1.5rem 1.25rem;
-  border-radius: 2px;
+  border-radius: 16px;
   position: sticky;
-  top: 100px;
-  max-height: calc(100vh - 120px);
+  top: 20px;
+  max-height: calc(100vh - 50px);
   overflow-y: auto;
+  box-shadow: var(--tuning-shadow);
 }
 .filter-panel h5 {
-  font-family: 'Rajdhani', sans-serif;
+  font-family: 'Bagel Fat One', cursive;
   color: var(--tuning-primary);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
   font-size: 1rem;
-  border-bottom: 1px solid var(--tuning-border);
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
+  border-bottom: 2px solid var(--tuning-header-tab);
+  padding-bottom: 0.4rem;
+  margin: 1rem 0 0.7rem;
 }
 .filter-panel h5:first-child { margin-top: 0; }
-.filter-panel label { font-size: 0.85rem; font-weight: 600; letter-spacing: 0.03em; }
+.filter-panel label { font-size: 0.85rem; font-weight: 700; color: var(--tuning-text); }
 .filter-panel .range-value {
-  font-family: 'Rajdhani', sans-serif;
-  color: var(--tuning-primary);
-  font-weight: 700;
+  font-family: 'Bagel Fat One', cursive;
+  color: var(--tuning-secondary);
   font-size: 1rem;
 }
 
-// -------- Countdown timer oferta -------------------------------------------
+// -------- Countdown timer oferta ------------
 .oferta-timer {
-  font-family: 'Rajdhani', 'Courier New', monospace;
-  font-weight: 700;
+  font-family: 'Bagel Fat One', 'Nunito', monospace;
+  font-weight: 400;
   color: var(--tuning-timer);
-  font-size: 1.1rem;
-  letter-spacing: 0.08em;
-  text-shadow: 0 0 8px rgba(255, 183, 3, 0.5);
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  background: #fff3e0;
+  padding: 0.15rem 0.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--tuning-timer);
 }
 .oferta-timer.critical {
-  color: var(--tuning-primary);
-  text-shadow: 0 0 12px rgba(230, 57, 70, 0.8);
+  background: var(--tuning-timer);
+  color: #FFFFFF;
   animation: pulseUrgency 0.6s ease-in-out infinite alternate;
 }
 @keyframes pulseUrgency {
-  from { opacity: 1; }
-  to   { opacity: 0.55; }
+  from { opacity: 1; transform: scale(1); }
+  to   { opacity: 0.7; transform: scale(1.05); }
 }
 
-// -------- Comparison Tray fix jos -------------------------------------------
+// -------- Comparison Tray fix jos - lavender pastel -----------------
 .comparison-tray {
   position: fixed;
   bottom: 0; left: 0; right: 0;
   z-index: 1050;
-  background: rgba(11, 12, 16, 0.88);
-  backdrop-filter: blur(14px);
-  border-top: 2px solid var(--tuning-primary);
+  background: var(--tuning-nav);
+  border-top: 2px solid var(--tuning-border-strong);
   padding: 0.9rem 1.25rem;
   transform: translateY(120%);
   transition: transform 0.35s ease;
-  color: #FFFFFF;
+  color: var(--tuning-primary);
+  box-shadow: 0 -4px 20px rgba(40, 53, 147, 0.15);
 }
 .comparison-tray.visible { transform: translateY(0); }
 .comparison-tray .tray-slot {
   width: 60px; height: 60px;
   border: 2px dashed var(--tuning-primary);
-  border-radius: 2px;
+  border-radius: 12px;
   display: flex; align-items: center; justify-content: center;
   overflow: hidden;
   position: relative;
-  background: rgba(255,255,255,0.02);
+  background: rgba(255,255,255,0.6);
 }
 .comparison-tray .tray-slot img { width: 100%; height: 100%; object-fit: cover; }
 .comparison-tray .tray-slot .remove-x {
@@ -263,80 +306,127 @@
   cursor: pointer;
 }
 
-// -------- Orar widget -------------------------------------------------------
+// -------- Orar widget (tabel style referinta) --------
 .orar-widget {
   background: var(--tuning-surface);
-  border-left: 3px solid var(--tuning-primary);
+  border: 2px solid var(--tuning-border);
+  border-radius: 12px;
   padding: 1rem 1.2rem;
-  border-radius: 2px;
+  box-shadow: var(--tuning-shadow);
 }
-.orar-widget .zi { padding: 0.25rem 0; display: flex; justify-content: space-between; font-size: 0.9rem; }
-.orar-widget .zi.today { color: var(--tuning-primary); font-weight: 700; }
-.orar-widget .status-open { color: #2A9D8F; font-weight: 700; }
-.orar-widget .status-closed { color: var(--tuning-primary); font-weight: 700; }
+.orar-widget h5 {
+  font-family: 'Bagel Fat One', cursive;
+  color: var(--tuning-primary);
+  margin-bottom: 0.6rem;
+  font-size: 1.1rem;
+}
+.orar-widget .zi { 
+  padding: 0.35rem 0.5rem;
+  display: flex; 
+  justify-content: space-between; 
+  font-size: 0.9rem;
+  border-radius: 6px;
+  margin-bottom: 2px;
+}
+.orar-widget .zi:nth-child(odd) { background: var(--tuning-surface-alt); }
+.orar-widget .zi.today { 
+  background: var(--tuning-header-tab); 
+  color: var(--tuning-primary); 
+  font-weight: 800;
+}
+.orar-widget .status-open { color: var(--tuning-badge-cheapest); font-weight: 800; }
+.orar-widget .status-closed { color: var(--tuning-badge-new); font-weight: 800; }
 
-// -------- Tabel responsive + transpus la media query (Faza 3) ---------------
-.tabel-detalii {
-  width: 100%;
-  border-collapse: collapse;
+// -------- Anunturi box (mint verde ca in referinta) --------
+.anunt-box {
+  background: var(--tuning-surface-mint);
+  border: 2px solid #81c784;
+  border-radius: 12px;
+  padding: 1rem 1.3rem;
   color: var(--tuning-text);
 }
-.tabel-detalii th, .tabel-detalii td {
+.anunt-box h5 {
+  font-family: 'Bagel Fat One', cursive;
+  color: var(--tuning-primary);
+  margin-bottom: 0.5rem;
+}
+[data-tuning-theme="dark"] .anunt-box { color: #FFFFFF; }
+
+// -------- Tabel detalii ----------
+.tabel-detalii {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  color: var(--tuning-text);
+  background: var(--tuning-surface);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid var(--tuning-border);
+}
+.tabel-detalii thead {
+  background: var(--tuning-header-tab);
+}
+.tabel-detalii thead th {
   padding: 0.7rem 0.9rem;
+  color: var(--tuning-primary);
+  font-family: 'Bagel Fat One', cursive;
+  font-size: 0.95rem;
+  border-bottom: 2px solid var(--tuning-border-strong);
+  text-align: left;
+}
+.tabel-detalii tbody td, .tabel-detalii tbody th {
+  padding: 0.65rem 0.9rem;
   border-bottom: 1px solid var(--tuning-border);
   text-align: left;
   vertical-align: top;
 }
-.tabel-detalii th {
-  font-family: 'Rajdhani', sans-serif;
-  text-transform: uppercase;
+.tabel-detalii tbody tr:nth-child(odd) { background: var(--tuning-surface-alt); }
+.tabel-detalii tbody th {
+  font-weight: 700;
   color: var(--tuning-primary);
-  letter-spacing: 0.05em;
-  font-size: 0.85rem;
   width: 34%;
 }
+
 @media (max-width: 767.98px) {
   .tabel-detalii thead { display: none; }
-  .tabel-detalii tr { display: block; margin-bottom: 1rem; border: 1px solid var(--tuning-border); }
-  .tabel-detalii td, .tabel-detalii th {
+  .tabel-detalii tr { display: block; margin-bottom: 1rem; border: 1px solid var(--tuning-border); border-radius: 8px; }
+  .tabel-detalii td, .tabel-detalii tbody th {
     display: block;
     width: 100% !important;
     border-bottom: 1px dashed var(--tuning-border);
   }
   .tabel-detalii td::before {
     content: attr(data-label);
-    font-family: 'Rajdhani', sans-serif;
+    font-family: 'Bagel Fat One', cursive;
     color: var(--tuning-primary);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
     font-size: 0.75rem;
     display: block;
     margin-bottom: 0.2rem;
   }
 }
 
-// -------- Theme switch ------------------------------------------------------
+// -------- Theme switch - pastel ----
 .theme-switch {
   display: flex;
-  gap: 0.4rem;
-  background: var(--tuning-surface);
-  padding: 0.35rem;
-  border-radius: 2px;
-  border: 1px solid var(--tuning-border);
+  gap: 0.35rem;
+  background: rgba(255,255,255,0.5);
+  padding: 0.3rem;
+  border-radius: 10px;
+  border: 1px solid var(--tuning-border-strong);
 }
 .theme-switch button {
   background: transparent;
   border: none;
-  color: var(--tuning-text);
+  color: var(--tuning-primary);
   padding: 0.35rem 0.55rem;
-  border-radius: 2px;
+  border-radius: 6px;
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
 }
 .theme-switch button.active { background: var(--tuning-primary); color: #FFF; }
-.theme-switch button:hover:not(.active) { background: var(--tuning-surface-hover); }
+.theme-switch button:hover:not(.active) { background: rgba(255,255,255,0.8); }
 
-// -------- Fade-in / stagger animations --------------------------------------
+// -------- Fade-in / stagger animations (pastrate) ---
 .reveal {
   opacity: 0;
   transform: translateY(20px);
@@ -344,23 +434,76 @@
 }
 @keyframes revealIn { to { opacity: 1; transform: translateY(0); } }
 
+// -------- Back to top button (ca in referinta) -----
+.back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 46px;
+  height: 46px;
+  background: var(--tuning-primary);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(40, 53, 147, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, transform 0.3s, background 0.2s;
+  z-index: 1049;
+  font-size: 1.2rem;
+}
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+.back-to-top:hover {
+  background: var(--tuning-secondary);
+  transform: translateY(-3px);
+}
+
 // -------- Utility overrides -------------------------------------------------
 .text-primary-tuning { color: var(--tuning-primary) !important; }
 .bg-surface-tuning { background: var(--tuning-surface) !important; }
 .border-primary-tuning { border-color: var(--tuning-primary) !important; }
-.section-tuning { padding: 4rem 0; position: relative; z-index: 1; }
-.section-tuning h2 {
-  font-family: 'Rajdhani', sans-serif;
-  text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  color: var(--tuning-text);
-  margin-bottom: 2rem;
+
+// btn-tuning devine simplu btn-primary style
+.btn-tuning, .btn-tuning-outline {
+  transform: none !important;
+  text-transform: none !important;
+  font-family: 'Nunito', sans-serif !important;
+  font-weight: 700 !important;
+  border-radius: 10px !important;
+  letter-spacing: 0 !important;
+  padding: 0.5rem 1.1rem;
 }
-.section-tuning h2 .stripe {
-  display: inline-block;
-  width: 60px; height: 4px;
+.btn-tuning > *, .btn-tuning-outline > * {
+  display: inline;
+  transform: none !important;
+}
+.btn-tuning {
   background: var(--tuning-primary);
-  margin-right: 0.75rem;
-  vertical-align: middle;
+  color: #FFFFFF;
+  border: 2px solid var(--tuning-primary);
+  transition: all 0.2s ease;
+}
+.btn-tuning:hover {
+  background: var(--tuning-secondary);
+  border-color: var(--tuning-secondary);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(126, 87, 194, 0.35);
+}
+.btn-tuning-outline {
+  background: transparent;
+  color: var(--tuning-primary);
+  border: 2px solid var(--tuning-primary);
+}
+.btn-tuning-outline:hover {
+  background: var(--tuning-primary);
+  color: #FFFFFF;
+  transform: translateY(-2px);
 }

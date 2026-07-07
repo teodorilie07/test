@@ -10,7 +10,7 @@
     buttons.forEach(b => b.classList.toggle('active', b.dataset.theme === theme));
   }
 
-  const current = localStorage.getItem(KEY) || 'dark';
+  const current = localStorage.getItem(KEY) || 'light';
   apply(current);
 
   buttons.forEach(b => {
