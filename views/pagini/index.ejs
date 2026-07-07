@@ -1,0 +1,112 @@
+<%- include('../partials/header') %>
+
+<!-- HERO -->
+<section class="hero-tuning" data-testid="homepage-hero">
+  <div class="container-fluid px-4 px-lg-5">
+    <div class="row">
+      <div class="col-lg-8 col-xl-7">
+        <span class="badge-hero" data-testid="hero-badge">// Atelier certificat performanță</span>
+        <h1 class="mt-3 reveal">Piese <span class="accent">TUNING</span><br>Care ridică <span class="accent">CAII</span> putere.</h1>
+        <p class="lead mt-4 reveal" style="animation-delay:0.1s;">
+          Peste 20 de piese premium (spoilere carbon, jante forjate, chip-tuning) selectate de mecanicii noștri. Livrare rapidă, montaj profesionist, garanție reală.
+        </p>
+        <div class="d-flex gap-3 mt-4 flex-wrap reveal" style="animation-delay:0.2s;">
+          <a href="/produse" class="btn btn-tuning btn-lg" data-testid="hero-cta-catalog"><span>Vezi catalogul</span></a>
+          <a href="/seturi" class="btn btn-tuning-outline btn-lg" data-testid="hero-cta-seturi"><span>Seturi cu discount</span></a>
+        </div>
+        <div class="d-flex gap-4 mt-5 flex-wrap reveal" style="animation-delay:0.3s;">
+          <div><div style="font-family:'Rajdhani',sans-serif; font-size:2.4rem; font-weight:700; color:var(--tuning-primary);">20+</div><small style="color:rgba(255,255,255,0.7); text-transform:uppercase; letter-spacing:0.1em;">Piese premium</small></div>
+          <div><div style="font-family:'Rajdhani',sans-serif; font-size:2.4rem; font-weight:700; color:var(--tuning-primary);">5</div><small style="color:rgba(255,255,255,0.7); text-transform:uppercase; letter-spacing:0.1em;">Categorii</small></div>
+          <div><div style="font-family:'Rajdhani',sans-serif; font-size:2.4rem; font-weight:700; color:var(--tuning-primary);">3</div><small style="color:rgba(255,255,255,0.7); text-transform:uppercase; letter-spacing:0.1em;">Pachete complete</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Marquee -->
+<div class="marquee-tuning" data-testid="marquee-anunt">
+  <div class="marquee-tuning-track">
+    Spoiler Carbon <span class="sep">//</span> Chip Tuning Stage 1 <span class="sep">//</span> Jante Forjate R19 <span class="sep">//</span> Evacuare Inox Sport <span class="sep">//</span> Sistem HUD OBD2 <span class="sep">//</span> Kit LED 12000lm <span class="sep">//</span> Livrare 24-48h <span class="sep">//</span>
+  </div>
+</div>
+
+<!-- Produse Noi (Bonus 18) -->
+<% if (produseNoi && produseNoi.length) { %>
+<section class="section-tuning">
+  <div class="container-fluid px-4 px-lg-5">
+    <h2><span class="stripe"></span>Nou în atelier</h2>
+    <div class="row g-4" data-testid="grid-produse-noi">
+      <% produseNoi.forEach(function(p) { %>
+        <div class="col-md-6 col-lg-4 col-xl-3"><%- include('../partials/card-produs', { produs: p }) %></div>
+      <% }); %>
+    </div>
+  </div>
+</section>
+<% } %>
+
+<!-- Fundal fix cu schimbare imagine (Faza 3) -->
+<section class="bg-fix-slider" id="bg-slider" data-testid="bg-slider"
+  style="background-image: url('https://images.unsplash.com/photo-1747115986467-a4510549984f?w=1600&q=85');">
+  <div class="container-fluid px-4 px-lg-5 py-5 my-5">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 text-center reveal">
+        <h2 style="color:#FFFFFF; font-family:'Rajdhani',sans-serif; text-transform:uppercase; font-size: clamp(2rem, 4vw, 3.5rem);">
+          Fiecare piesă <span style="color: var(--tuning-primary);">măreşte performanţa</span>
+        </h2>
+        <p class="lead" style="color: rgba(255,255,255,0.85);">
+          Fie că vrei mai multă apăsare aerodinamică sau mai mulți CP la roți — la GARAJ TUNING găsești componenta perfectă și mecanicul care ți-o montează.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Column-count text (Faza 3) -->
+<section class="section-tuning">
+  <div class="container-fluid px-4 px-lg-5">
+    <h2><span class="stripe"></span>De ce Garaj Tuning</h2>
+    <div class="col-count-block" data-testid="col-count-block">
+      <p>Cu peste zece ani de experiență în modificarea autovehiculelor pentru pasionații de performanță, GARAJ TUNING oferă mai mult decât un catalog — oferim expertiza montajului corect, calibrarea la banc și garanția că piesa aleasă funcționează perfect pe mașina ta.</p>
+      <p>Colaborăm exclusiv cu producători premium: fibra de carbon vine în ambalaj original, jantele forjate sunt monobloc, iar remapările ECU se fac pe bază de fișier custom generat pe banc.</p>
+      <p>Fiecare montaj complex este realizat de mecanici certificați, cu scule specializate și proceduri de siguranță. Punem la dispoziție lift, banc de probă și tester diagnoză multibrand.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Populare -->
+<% if (produsePopulare && produsePopulare.length) { %>
+<section class="section-tuning" style="background: var(--tuning-surface);">
+  <div class="container-fluid px-4 px-lg-5">
+    <h2><span class="stripe"></span>Alege-ți piesa</h2>
+    <div class="row g-4" data-testid="grid-produse-populare">
+      <% produsePopulare.forEach(function(p) { %>
+        <div class="col-md-6 col-lg-4 col-xl-3"><%- include('../partials/card-produs', { produs: p }) %></div>
+      <% }); %>
+    </div>
+    <div class="text-center mt-4">
+      <a href="/produse" class="btn btn-tuning" data-testid="btn-catalog-toate"><span>Vezi toate produsele</span></a>
+    </div>
+  </div>
+</section>
+<% } %>
+
+<%- include('../partials/footer') %>
+
+<script>
+  // Background image slider Faza 3
+  (function() {
+    const imgs = [
+      'https://images.unsplash.com/photo-1747115986467-a4510549984f?w=1600&q=85',
+      'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=1600&q=85',
+      'https://images.unsplash.com/photo-1600793575654-910699b5e4d4?w=1600&q=85',
+    ];
+    let i = 0;
+    const el = document.getElementById('bg-slider');
+    if (!el) return;
+    setInterval(function() {
+      i = (i + 1) % imgs.length;
+      el.style.backgroundImage = "url('" + imgs[i] + "')";
+    }, 5000);
+  })();
+</script>

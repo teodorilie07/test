@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title><%= typeof title !== 'undefined' ? title : 'GARAJ TUNING' %></title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="/resurse/css/custom.css">
+<link rel="stylesheet" href="/resurse/css/componente.css">
+<script>
+  // Aplicare tema imediata (evita flicker)
+  (function() {
+    const t = localStorage.getItem('tuning-theme') || 'dark';
+    document.documentElement.setAttribute('data-tuning-theme', t);
+  })();
+</script>
+</head>
+<body>
+<%- include('meniu') %>

@@ -1,0 +1,19 @@
+{
+  "name": "tuning-shop",
+  "version": "1.0.0",
+  "description": "Atelier Tuning Auto - Proiect Tehnologii Web (Node.js + Express + EJS + PostgreSQL)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "chokidar": "^3.6.0",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "pg": "^8.13.1",
+    "sass": "^1.83.0"
+  }
+}
