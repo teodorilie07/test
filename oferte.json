@@ -78,5 +78,29 @@
     "discount": 12,
     "creata_la": 1783464173841,
     "expira_la": 1783464413841
+  },
+  {
+    "id_produs": 11,
+    "pret_vechi": 2650,
+    "pret_nou": 2040.5,
+    "discount": 23,
+    "creata_la": 1783464293876,
+    "expira_la": 1783464533876
+  },
+  {
+    "id_produs": 3,
+    "pret_vechi": 1120,
+    "pret_nou": 1008,
+    "discount": 10,
+    "creata_la": 1783464293876,
+    "expira_la": 1783464533876
+  },
+  {
+    "id_produs": 15,
+    "pret_vechi": 640,
+    "pret_nou": 512,
+    "discount": 20,
+    "creata_la": 1783464293876,
+    "expira_la": 1783464533876
   }
 ]
