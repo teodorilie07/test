@@ -22,7 +22,7 @@
       params.append(k, v);
     }
     params.set('pagina', '1');
-    fetch('/api/produse?' + params.toString())
+    fetch('/catalog-json?' + params.toString())
       .then(r => r.json())
       .then(data => {
         if (contor) contor.textContent = data.total;

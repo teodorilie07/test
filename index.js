@@ -100,7 +100,7 @@ app.use('/resurse', express.static(path.join(__dirname, 'resurse')));
 const CALE_OFERTE = path.join(__dirname, 'oferte.json');
 const T_GENERARE_MS  = 2 * 60 * 1000;   // 2 min - genereaza oferte noi
 const T2_CLEANUP_MS  = 5 * 60 * 1000;   // 5 min - cleanup oferte expirate
-const DURATA_OFERTA  = 90 * 1000;       // 90 sec durata
+const DURATA_OFERTA  = 4 * 60 * 1000;   // 4 min durata (garanteaza overlap cu T=2min)
 
 function citesteOferte() {
   try { return JSON.parse(fs.readFileSync(CALE_OFERTE, 'utf-8')); }
@@ -380,8 +380,8 @@ app.get('/produse', async (req, res) => {
   }
 });
 
-// API filtrare fetch (Bonus 10)
-app.get('/api/produse', async (req, res) => {
+// API filtrare fetch (Bonus 10) - path fara /api prefix pt a evita conflict ingress
+app.get('/catalog-json', async (req, res) => {
   try {
     const oferte = citesteOferte().filter(o => o.expira_la > Date.now());
     const cheapestSet = await calcCeiMaiIeftini();

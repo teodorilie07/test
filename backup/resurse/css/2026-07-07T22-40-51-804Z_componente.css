@@ -1,0 +1,488 @@
+.hero-tuning {
+  min-height: 88vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(11, 12, 16, 0.92) 0%, rgba(11, 12, 16, 0.55) 60%, rgba(11, 12, 16, 0.85) 100%), url("https://images.unsplash.com/photo-1747115986467-a4510549984f?w=1600&q=85") center/cover no-repeat;
+}
+
+.hero-tuning .badge-hero {
+  display: inline-block;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--tuning-primary);
+  color: var(--tuning-primary);
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  background: rgba(230, 57, 70, 0.08);
+}
+
+.hero-tuning h1 {
+  font-size: clamp(2.5rem, 6.5vw, 5.5rem);
+  line-height: 0.95;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.hero-tuning h1 .accent {
+  color: var(--tuning-primary);
+}
+
+.hero-tuning .lead {
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 640px;
+  font-size: 1.15rem;
+}
+
+.marquee-tuning {
+  overflow: hidden;
+  padding: 1rem 0;
+  background: var(--tuning-surface);
+  border-top: 1px solid var(--tuning-border);
+  border-bottom: 1px solid var(--tuning-border);
+}
+
+.marquee-tuning-track {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%;
+  animation: marqueeMove 25s linear infinite;
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--tuning-text);
+}
+
+.marquee-tuning-track .sep {
+  color: var(--tuning-primary);
+  margin: 0 1.5rem;
+}
+
+@keyframes marqueeMove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.bg-fix-slider {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 1s ease;
+  min-height: 45vh;
+  position: relative;
+}
+
+.bg-fix-slider::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.85));
+}
+
+.bg-fix-slider > .container {
+  position: relative;
+  z-index: 2;
+}
+
+.col-count-block {
+  column-count: 3;
+  column-gap: 2.5rem;
+  column-rule: 2px dashed var(--tuning-primary);
+  font-family: "Exo 2", sans-serif;
+  line-height: 1.6;
+  color: var(--tuning-text-muted);
+}
+
+@media (max-width: 991.98px) {
+  .col-count-block {
+    column-count: 1;
+    column-rule: none;
+  }
+}
+::selection {
+  background: var(--tuning-primary);
+  color: #FFFFFF;
+  text-shadow: none;
+}
+
+.product-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  border: 1px solid var(--tuning-border);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card .card-media {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background: #000;
+}
+
+.product-card .card-media img,
+.product-card .card-media .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .card-media img {
+  transform: scale(1.06);
+}
+
+.product-card .badges-wrap {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  gap: 6px;
+  justify-content: space-between;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.badge-tuning {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 2px;
+}
+
+.badge-nou {
+  background: var(--tuning-badge-new);
+  color: #FFFFFF;
+}
+
+.badge-oferta {
+  background: var(--tuning-timer);
+  color: #0B0C10;
+}
+
+.badge-cheapest {
+  background: var(--tuning-badge-cheapest);
+  color: #FFFFFF;
+}
+
+.product-card .card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  flex: 1;
+}
+
+.product-card .card-title {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--tuning-text);
+  margin: 0;
+}
+
+.product-card .card-meta {
+  font-size: 0.82rem;
+  color: var(--tuning-text-muted);
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.product-card .card-price {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: var(--tuning-primary);
+  margin-top: auto;
+}
+
+.product-card .card-price .old {
+  color: var(--tuning-text-muted);
+  text-decoration: line-through;
+  font-size: 0.95rem;
+  margin-right: 0.5rem;
+  font-weight: 400;
+}
+
+.filter-panel {
+  background: var(--tuning-surface);
+  border: 1px solid var(--tuning-border);
+  padding: 1.5rem 1.25rem;
+  border-radius: 2px;
+  position: sticky;
+  top: 100px;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+}
+
+.filter-panel h5 {
+  font-family: "Rajdhani", sans-serif;
+  color: var(--tuning-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 1rem;
+  border-bottom: 1px solid var(--tuning-border);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.filter-panel h5:first-child {
+  margin-top: 0;
+}
+
+.filter-panel label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.filter-panel .range-value {
+  font-family: "Rajdhani", sans-serif;
+  color: var(--tuning-primary);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.oferta-timer {
+  font-family: "Rajdhani", "Courier New", monospace;
+  font-weight: 700;
+  color: var(--tuning-timer);
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  text-shadow: 0 0 8px rgba(255, 183, 3, 0.5);
+}
+
+.oferta-timer.critical {
+  color: var(--tuning-primary);
+  text-shadow: 0 0 12px rgba(230, 57, 70, 0.8);
+  animation: pulseUrgency 0.6s ease-in-out infinite alternate;
+}
+
+@keyframes pulseUrgency {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.55;
+  }
+}
+.comparison-tray {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1050;
+  background: rgba(11, 12, 16, 0.88);
+  backdrop-filter: blur(14px);
+  border-top: 2px solid var(--tuning-primary);
+  padding: 0.9rem 1.25rem;
+  transform: translateY(120%);
+  transition: transform 0.35s ease;
+  color: #FFFFFF;
+}
+
+.comparison-tray.visible {
+  transform: translateY(0);
+}
+
+.comparison-tray .tray-slot {
+  width: 60px;
+  height: 60px;
+  border: 2px dashed var(--tuning-primary);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.comparison-tray .tray-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.comparison-tray .tray-slot .remove-x {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 22px;
+  height: 22px;
+  background: var(--tuning-primary);
+  color: #FFF;
+  border: none;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.orar-widget {
+  background: var(--tuning-surface);
+  border-left: 3px solid var(--tuning-primary);
+  padding: 1rem 1.2rem;
+  border-radius: 2px;
+}
+
+.orar-widget .zi {
+  padding: 0.25rem 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.orar-widget .zi.today {
+  color: var(--tuning-primary);
+  font-weight: 700;
+}
+
+.orar-widget .status-open {
+  color: #2A9D8F;
+  font-weight: 700;
+}
+
+.orar-widget .status-closed {
+  color: var(--tuning-primary);
+  font-weight: 700;
+}
+
+.tabel-detalii {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--tuning-text);
+}
+
+.tabel-detalii th, .tabel-detalii td {
+  padding: 0.7rem 0.9rem;
+  border-bottom: 1px solid var(--tuning-border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.tabel-detalii th {
+  font-family: "Rajdhani", sans-serif;
+  text-transform: uppercase;
+  color: var(--tuning-primary);
+  letter-spacing: 0.05em;
+  font-size: 0.85rem;
+  width: 34%;
+}
+
+@media (max-width: 767.98px) {
+  .tabel-detalii thead {
+    display: none;
+  }
+  .tabel-detalii tr {
+    display: block;
+    margin-bottom: 1rem;
+    border: 1px solid var(--tuning-border);
+  }
+  .tabel-detalii td, .tabel-detalii th {
+    display: block;
+    width: 100% !important;
+    border-bottom: 1px dashed var(--tuning-border);
+  }
+  .tabel-detalii td::before {
+    content: attr(data-label);
+    font-family: "Rajdhani", sans-serif;
+    color: var(--tuning-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.75rem;
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+}
+.theme-switch {
+  display: flex;
+  gap: 0.4rem;
+  background: var(--tuning-surface);
+  padding: 0.35rem;
+  border-radius: 2px;
+  border: 1px solid var(--tuning-border);
+}
+
+.theme-switch button {
+  background: transparent;
+  border: none;
+  color: var(--tuning-text);
+  padding: 0.35rem 0.55rem;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.theme-switch button.active {
+  background: var(--tuning-primary);
+  color: #FFF;
+}
+
+.theme-switch button:hover:not(.active) {
+  background: var(--tuning-surface-hover);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: revealIn 0.6s ease forwards;
+}
+
+@keyframes revealIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.text-primary-tuning {
+  color: var(--tuning-primary) !important;
+}
+
+.bg-surface-tuning {
+  background: var(--tuning-surface) !important;
+}
+
+.border-primary-tuning {
+  border-color: var(--tuning-primary) !important;
+}
+
+.section-tuning {
+  padding: 4rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.section-tuning h2 {
+  font-family: "Rajdhani", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--tuning-text);
+  margin-bottom: 2rem;
+}
+
+.section-tuning h2 .stripe {
+  display: inline-block;
+  width: 60px;
+  height: 4px;
+  background: var(--tuning-primary);
+  margin-right: 0.75rem;
+  vertical-align: middle;
+}

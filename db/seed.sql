@@ -25,7 +25,7 @@ INSERT INTO produse (nume, descriere, imagine, imagini_extra, categorie, materia
 -- Motor
 ('Sistem Evacuare Inox Cat-Back', 'Sistem evacuare complet cat-back din inox T304, diametru 76mm. Toba finala oval carbon. Sunet sport dar civilizat.', 'https://images.unsplash.com/photo-1600793575654-910699b5e4d4?crop=entropy&cs=srgb&fm=jpg&w=800&q=80', ARRAY[]::TEXT[], 'Motor', 'inox', 4200.00, 18, CURRENT_DATE - INTERVAL '5 days', 'Inox polisat', ARRAY['VW Golf 7 GTI','VW Golf 7 R','Audi S3 8V'], true),
 
-('Chip Tuning Stage 1 ECU', 'Remapare ECU Stage 1 pentru motoare TSI/TDI. Fisier custom pe bancul de teste. Crestere 30-45CP + 60-80Nm.', 'https://images.unsplash.com/photo-1611288891457-1541fc44c2f5?crop=entropy&cs=srgb&fm=jpg&w=800&q=80', ARRAY[]::TEXT[], 'Motor', 'plastic', 1500.00, 42, CURRENT_DATE - INTERVAL '2 days', 'N/A', ARRAY['VW Golf 7','Audi A3 8V','Audi A4 B9','Skoda Octavia 3'], true),
+('Chip Tuning Stage 1 ECU', 'Remapare ECU Stage 1 pentru motoare TSI/TDI. Fisier custom pe bancul de teste. Crestere 30-45CP + 60-80Nm.', 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?crop=entropy&cs=srgb&fm=jpg&w=800&q=80', ARRAY[]::TEXT[], 'Motor', 'plastic', 1500.00, 42, CURRENT_DATE - INTERVAL '2 days', 'N/A', ARRAY['VW Golf 7','Audi A3 8V','Audi A4 B9','Skoda Octavia 3'], true),
 
 ('Intercooler Racing FMIC', 'Intercooler front-mount marit, core 600x300x100mm bar-and-plate. Reduce IAT-ul cu pana la 30 grade C.', 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?crop=entropy&cs=srgb&fm=jpg&w=800&q=80', ARRAY[]::TEXT[], 'Motor', 'aluminiu', 2650.00, 12, CURRENT_DATE - INTERVAL '25 days', 'Negru vopsit', ARRAY['BMW N54','BMW N55','BMW S55'], true),
 
@@ -38,14 +38,14 @@ INSERT INTO produse (nume, descriere, imagine, imagini_extra, categorie, materia
 
 ('Set Suruburi Coliseum Titan', 'Set 20 suruburi Coliseum din titan grad 5, filet M14x1.5, cheie 17. Ultra usor si rezistent la coroziune.', 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?crop=entropy&cs=srgb&fm=jpg&w=800&q=80', ARRAY[]::TEXT[], 'Roti', 'aluminiu', 640.00, 0, CURRENT_DATE - INTERVAL '150 days', 'Argintiu titan', ARRAY['universal 5x100','universal 5x112','universal 5x120'], false),
 
-('Distantiere Roti Hubcentric 20mm', 'Distantiere aluminiu hubcentric 20mm, prezoane M14x1.5, suruburi radiale. Aspect flush.', 'https://images.unsplash.com/photo-1615394090234-1c7c5f3ad3b7?crop=entropy&cs=srgb&fm=jpg&w=800&q=80', ARRAY[]::TEXT[], 'Roti', 'aluminiu', 380.00, 0, CURRENT_DATE - INTERVAL '80 days', 'Argintiu anodizat', ARRAY['Audi A3','Audi A4','VW Golf'], false),
+('Distantiere Roti Hubcentric 20mm', 'Distantiere aluminiu hubcentric 20mm, prezoane M14x1.5, suruburi radiale. Aspect flush.', 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?crop=entropy&cs=srgb&fm=jpg&w=800&q=80', ARRAY[]::TEXT[], 'Roti', 'aluminiu', 380.00, 0, CURRENT_DATE - INTERVAL '80 days', 'Argintiu anodizat', ARRAY['Audi A3','Audi A4','VW Golf'], false),
 
 -- Electronice
 ('Kit LED Faruri H7 12000lm', 'Kit LED faruri H7 CANbus, 12000 lm per pereche, chip CSP Philips, 6000K alb. Ventilator activ.', 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?crop=entropy&cs=srgb&fm=jpg&w=800&q=80', ARRAY[]::TEXT[], 'Electronice', 'plastic', 340.00, 0, CURRENT_DATE - INTERVAL '12 days', 'Alb 6000K', ARRAY['universal H7'], false),
 
 ('Camera Marsalier HD Nightvision', 'Camera marsalier HD 1080p cu nightvision IR, unghi 170 grade, IP68. Cablu 6m RCA + trigger reverse.', 'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?crop=entropy&cs=srgb&fm=jpg&w=800&q=80', ARRAY[]::TEXT[], 'Electronice', 'plastic', 260.00, 0, CURRENT_DATE - INTERVAL '20 days', 'Negru', ARRAY['universal 12V'], false),
 
-('Modul Coding OBD BimmerCode', 'Interfata OBD Bluetooth pentru coding BMW/Mini. Compatibil aplicatia BimmerCode/Carly. Include licenta 1 an.', 'https://images.unsplash.com/photo-1611288891457-1541fc44c2f5?crop=entropy&cs=srgb&fm=jpg&w=800&q=80', ARRAY[]::TEXT[], 'Electronice', 'plastic', 480.00, 0, CURRENT_DATE - INTERVAL '18 days', 'Alb / Albastru', ARRAY['BMW F seria','BMW G seria','MINI F seria'], false),
+('Modul Coding OBD BimmerCode', 'Interfata OBD Bluetooth pentru coding BMW/Mini. Compatibil aplicatia BimmerCode/Carly. Include licenta 1 an.', 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?crop=entropy&cs=srgb&fm=jpg&w=800&q=80', ARRAY[]::TEXT[], 'Electronice', 'plastic', 480.00, 0, CURRENT_DATE - INTERVAL '18 days', 'Alb / Albastru', ARRAY['BMW F seria','BMW G seria','MINI F seria'], false),
 
 ('Head-Up Display HUD-X Pro', 'Head-up display OBD2 cu proiectie color pe parbriz. Afiseaza viteza, RPM, temperatura, consum. Auto-off.', 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?crop=entropy&cs=srgb&fm=jpg&w=800&q=80', ARRAY[]::TEXT[], 'Electronice', 'plastic', 420.00, 0, CURRENT_DATE - INTERVAL '1 days', 'Negru', ARRAY['universal OBD2'], false);
 
