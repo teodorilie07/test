@@ -1,18 +1,14 @@
-// back-to-top.js - buton floating (pentru #link-top si .back-to-top)
+// back-to-top.js - link-top e mereu vizibil (opacity 0.6 CSS), doar smooth scroll la click
 (function() {
   const btn = document.getElementById('link-top') || document.getElementById('back-to-top');
   if (!btn) return;
 
-  function toggle() {
-    if (window.scrollY > 300) btn.classList.add('visible');
-    else btn.classList.remove('visible');
-  }
-  window.addEventListener('scroll', toggle, { passive: true });
-  toggle();
-
   btn.addEventListener('click', (e) => {
-    // Daca e ancora #top, lasa comportamentul default (smooth scroll via CSS)
-    if (btn.getAttribute('href') === '#top') return;
+    // Daca href e "#top", browserul va face jump implicit; forteaza smooth scroll consistent
+    if (btn.getAttribute('href') && btn.getAttribute('href').startsWith('#')) {
+      // Lasa default (smooth prin html { scroll-behavior: smooth; })
+      return;
+    }
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
