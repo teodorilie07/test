@@ -1,6 +1,6 @@
-// back-to-top.js - buton floating ca in referinta
+// back-to-top.js - buton floating (pentru #link-top si .back-to-top)
 (function() {
-  const btn = document.getElementById('back-to-top');
+  const btn = document.getElementById('link-top') || document.getElementById('back-to-top');
   if (!btn) return;
 
   function toggle() {
@@ -10,7 +10,10 @@
   window.addEventListener('scroll', toggle, { passive: true });
   toggle();
 
-  btn.addEventListener('click', () => {
+  btn.addEventListener('click', (e) => {
+    // Daca e ancora #top, lasa comportamentul default (smooth scroll via CSS)
+    if (btn.getAttribute('href') === '#top') return;
+    e.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 })();

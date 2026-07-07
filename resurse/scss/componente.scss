@@ -1,159 +1,451 @@
 // =============================================================================
-// componente.scss - Componente Tuning Pro Center (soft pastel)
+// componente.scss - Tuning Pro Center (structură originală + secțiuni produse)
 // =============================================================================
 
-// -------- Section wrapper - box alb cu border pastel + margine ----
+// -------- Grid layout homepage original ---------------------------------
+.grid-layout {
+  display: grid;
+  padding: var(--padding-zone) var(--margine-stanga-dreapta);
+  gap: var(--gap-grid);
+  grid-template-areas:
+    "z1 z1 z1 z1"
+    "z8 z8 z8 z8"
+    "z3 z2 z2 z4"
+    "z5 z6 z7 z7";
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.grid-layout section {
+  padding: var(--padding-zone);
+  border: 1px solid var(--clr-border-light);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px var(--clr-shadow-light);
+  margin: 0;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.grid-layout section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px var(--clr-shadow-med);
+}
+
+#zona1 { grid-area: z1; background-color: var(--clr-1); }
+#zona2 { grid-area: z2; background-color: var(--clr-white); }
+#zona3 { grid-area: z3; background-color: var(--clr-2); }
+#zona4 { grid-area: z4; background-color: var(--clr-4); }
+#zona5 { grid-area: z5; background-color: var(--clr-5); }
+#zona6 { grid-area: z6; background-color: var(--clr-3); }
+#zona7 { grid-area: z7; background-color: var(--clr-white); }
+#zona8 { grid-area: z8; }
+#zona8 > section { background-color: var(--clr-white); margin-bottom: var(--gap-grid); }
+#zona8 > section:last-child { margin-bottom: 0; }
+
+// Dark theme adaptation
+[data-tuning-theme="dark"] .grid-layout section { background-color: var(--tuning-surface) !important; }
+[data-tuning-theme="dark"] .grid-layout section h2,
+[data-tuning-theme="dark"] .grid-layout section h3,
+[data-tuning-theme="dark"] .grid-layout section h4 { color: var(--tuning-text) !important; }
+[data-tuning-theme="dark"] .grid-layout section p,
+[data-tuning-theme="dark"] .grid-layout section li,
+[data-tuning-theme="dark"] .grid-layout section td,
+[data-tuning-theme="dark"] .grid-layout section th { color: var(--tuning-text) !important; }
+
+// Peach theme adaptation
+[data-tuning-theme="peach"] #zona1 { background-color: #ffe0b2; }
+[data-tuning-theme="peach"] #zona2 { background-color: #ffffff; }
+[data-tuning-theme="peach"] #zona3 { background-color: #ffccbc; }
+[data-tuning-theme="peach"] #zona4 { background-color: #ffd180; }
+[data-tuning-theme="peach"] #zona5 { background-color: #ffab91; }
+[data-tuning-theme="peach"] #zona6 { background-color: #ffd0a3; }
+
+@media (max-width: 991.98px) {
+  .grid-layout {
+    grid-template-areas:
+      "z1 z1"
+      "z8 z8"
+      "z3 z3"
+      "z2 z2"
+      "z4 z4"
+      "z5 z6"
+      "z7 z7";
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 599.98px) {
+  .grid-layout {
+    grid-template-areas: "z1" "z8" "z3" "z2" "z4" "z5" "z6" "z7";
+    grid-template-columns: 1fr;
+  }
+}
+
+// -------- F-pattern content (Performanță Absolută) ---------------------
+.f-pattern-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+}
+.f-pattern-content p { line-height: 1.6; }
+.f-pattern-content .img-prezentare {
+  width: 100%;
+  max-width: 100%;
+  min-width: 150px;
+  height: auto;
+  border-radius: 8px;
+  border: 2px solid var(--clr-main);
+}
+@media (max-width: 767.98px) {
+  .f-pattern-content { grid-template-columns: 1fr; }
+}
+
+// -------- Blockquote + figure --------
+blockquote {
+  border-left: 4px solid var(--clr-main);
+  padding: 10px 15px;
+  margin: 15px 0;
+  font-style: italic;
+  background: var(--clr-1);
+  border-radius: 0 8px 8px 0;
+}
+[data-tuning-theme="dark"] blockquote { background: var(--tuning-surface-alt); }
+
+figure { margin: 15px 0; }
+figure img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 2px solid var(--clr-main);
+  transition: transform 0.4s ease;
+}
+figure a:hover img { transform: scale(1.02); }
+figcaption {
+  text-align: center;
+  font-style: italic;
+  color: var(--clr-dark-blue);
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+// -------- Bonus math box -------
+.bonus-math {
+  background: var(--clr-4);
+  padding: 12px 16px;
+  border-radius: 8px;
+  border-left: 4px solid var(--clr-main);
+  margin: 15px 0;
+}
+[data-tuning-theme="dark"] .bonus-math { background: var(--tuning-surface-mint); }
+
+// -------- Tabel orar (stil original) ---------
+.container-tabel {
+  width: 100%;
+  overflow-x: auto;
+}
+.grid-layout table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background-color: var(--clr-white);
+}
+[data-tuning-theme="dark"] .grid-layout table { background-color: var(--tuning-surface) !important; }
+
+.grid-layout th, .grid-layout td {
+  border: 1px solid var(--clr-border-light);
+  padding: 10px;
+  text-align: left;
+  transition: box-shadow 0.5s ease;
+  box-shadow: inset 0 0 0 rgba(0, 0, 0, 0);
+}
+.grid-layout th:nth-child(odd), .grid-layout td:nth-child(odd) {
+  border-right: 2px solid var(--clr-dark-blue);
+}
+.grid-layout th:nth-child(even), .grid-layout td:nth-child(even) {
+  border-right: 2px solid var(--clr-main);
+}
+.grid-layout th:last-child, .grid-layout td:last-child {
+  border-right: 1px solid var(--clr-border-light);
+}
+.grid-layout thead { background-color: var(--clr-3); }
+[data-tuning-theme="dark"] .grid-layout thead { background-color: var(--tuning-header-tab) !important; }
+.grid-layout thead th, .grid-layout thead td {
+  border-bottom: 3px solid var(--clr-dark-blue);
+}
+.grid-layout tfoot td { border-top: 3px solid var(--clr-dark-blue); }
+.grid-layout tbody tr:hover { background-color: var(--clr-1); }
+.grid-layout tbody tr:hover th,
+.grid-layout tbody tr:hover td {
+  box-shadow: inset 0 0 12px var(--clr-shadow-med);
+}
+.grid-layout tbody tr:nth-child(even) { background-color: var(--clr-bg-page); }
+[data-tuning-theme="dark"] .grid-layout tbody tr:nth-child(even) { background-color: var(--tuning-surface-alt) !important; }
+[data-tuning-theme="dark"] .grid-layout tbody tr:hover { background-color: var(--tuning-header-tab) !important; }
+
+caption {
+  caption-side: bottom;
+  font-style: italic;
+  margin-top: 10px;
+  padding-bottom: 5px;
+  font-weight: bold;
+  color: var(--clr-dark-blue);
+}
+
+// -------- Iframe video container (stil original) --------
+.container-iframe-custom {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.iframe-box {
+  flex-grow: 1;
+  border: 4px solid var(--clr-dark-blue);
+  background-color: var(--clr-white);
+  position: relative;
+  z-index: 2;
+}
+.iframe-box iframe {
+  min-height: 350px;
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+.taburi-iframe {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-left: -4px;
+  z-index: 1;
+}
+.taburi-iframe a {
+  background: linear-gradient(to bottom, var(--clr-2), var(--clr-5));
+  color: var(--clr-dark-blue);
+  padding: 15px 20px;
+  margin-bottom: 5px;
+  border: 2px solid var(--clr-dark-blue);
+  border-left: none;
+  border-radius: 0 40px 5px 0;
+  font-weight: bold;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: 0.6s transform, 0.6s background, 0.6s color;
+}
+.taburi-iframe a:hover {
+  background: linear-gradient(to bottom, var(--clr-main), var(--clr-2));
+  transform: translateX(5px);
+  color: var(--clr-dark-text);
+}
+.taburi-iframe a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 100%;
+  background-color: var(--clr-dark-blue);
+  opacity: 0;
+  transition: 0.6s opacity;
+}
+.taburi-iframe a:hover::after { opacity: 1; }
+
+// -------- Meter --------
+meter { width: 100%; height: 20px; margin-top: 5px; margin-bottom: 10px; }
+
+// -------- Details/Summary (accordion original) --------
+details {
+  background: var(--clr-1);
+  padding: 10px 15px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  border: 1px solid var(--clr-main);
+}
+[data-tuning-theme="dark"] details { background: var(--tuning-surface-alt); }
+details summary {
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--clr-dark-blue);
+  padding: 4px 0;
+}
+details[open] summary { border-bottom: 1px dashed var(--clr-main); margin-bottom: 8px; padding-bottom: 6px; }
+
+// -------- List style pentru promotii ---------
+#promotii ul, #zona3 ul {
+  padding-left: 20px;
+  list-style: disc;
+}
+#promotii ul li, #zona3 ul li {
+  margin-bottom: 6px;
+}
+#promotii ins { background: var(--clr-4); padding: 2px 6px; border-radius: 4px; text-decoration: none; font-weight: bold; }
+#promotii s { color: #999; }
+
+// -------- Link-top (round pastel like original) ----------
+#link-top, .back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: var(--clr-1);
+  border: 2px solid var(--clr-dark-blue);
+  border-radius: 50%;
+  box-shadow: inset 0 0 15px rgba(28, 53, 94, 0.4), 0 4px 12px rgba(0,0,0,0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  z-index: 1000;
+  cursor: pointer;
+  color: var(--clr-dark-blue);
+  font-size: 1.5rem;
+  font-family: 'Madimi One', sans-serif;
+  transition: transform 0.3s ease, background 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+#link-top.visible, .back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+#link-top:hover, .back-to-top:hover {
+  background-color: var(--clr-main);
+  transform: translateY(-4px) scale(1.05);
+  color: var(--clr-dark-blue);
+}
+
+// -------- Section wrapper (pentru celelalte pagini) -----
 .section-tuning {
   background: var(--tuning-surface);
-  border: 2px solid var(--tuning-border);
-  border-radius: 16px;
-  padding: 1.8rem 2rem;
-  margin: 1.2rem auto;
-  max-width: 1500px;
+  border: 1px solid var(--clr-border-light);
+  border-radius: 8px;
+  padding: 1.4rem 1.6rem;
+  margin: 1rem var(--margine-stanga-dreapta);
   position: relative;
   z-index: 1;
-  box-shadow: var(--tuning-shadow);
+  box-shadow: 0 4px 6px var(--clr-shadow-light);
 }
 .section-tuning h2 {
-  font-family: 'Bagel Fat One', cursive;
-  color: var(--tuning-primary);
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--tuning-header-tab);
-}
-.section-tuning h2 .stripe {
-  display: none; // eliminam stripe-ul agresiv
+  color: var(--clr-dark-blue);
+  border-bottom: 2px solid var(--clr-main);
+  padding-bottom: 6px;
+  margin-bottom: 15px;
 }
 
-// -------- Hero (soft, in stilul referintei) ---------------------------------
+// -------- Hero (folosit pe pagina de produse in loc de zona1) -------
 .hero-tuning {
-  background: var(--tuning-surface);
-  border: 2px solid var(--tuning-border);
-  border-radius: 16px;
-  padding: 2rem 2.2rem;
-  margin: 1.2rem auto;
-  max-width: 1500px;
-  min-height: auto;
-  box-shadow: var(--tuning-shadow);
+  background: var(--clr-1);
+  border: 1px solid var(--clr-border-light);
+  border-radius: 8px;
+  padding: 1.5rem 2rem;
+  margin: 1rem var(--margine-stanga-dreapta);
+  box-shadow: 0 4px 6px var(--clr-shadow-light);
 }
 .hero-tuning h1 {
-  font-family: 'Bagel Fat One', cursive;
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1.1;
-  color: var(--tuning-primary);
-  margin-bottom: 0.5rem;
+  font-family: 'Madimi One', sans-serif;
+  font-size: 2rem;
+  line-height: 1.15;
+  color: var(--clr-dark-blue);
+  margin-bottom: 0.4rem;
 }
-.hero-tuning h1 .accent { color: var(--tuning-secondary); }
+.hero-tuning h1 .accent { color: var(--clr-main); }
 .hero-tuning .badge-hero {
   display: inline-block;
-  padding: 0.25rem 0.7rem;
-  background: var(--tuning-header-tab);
-  color: var(--tuning-primary);
-  font-weight: 700;
-  border-radius: 12px;
+  padding: 4px 10px;
+  background: var(--clr-3);
+  color: var(--clr-dark-blue);
+  border-radius: 6px;
   font-size: 0.85rem;
+  font-weight: bold;
 }
 .hero-tuning .lead {
-  color: var(--tuning-text);
+  color: var(--clr-dark-text);
   max-width: 800px;
-  font-size: 1.05rem;
+  font-size: 1rem;
   margin-top: 0.5rem;
 }
+[data-tuning-theme="dark"] .hero-tuning { background: var(--tuning-surface-alt); }
 
-// -------- Marquee - stil pastel discret ---------------------------
+// Marquee (animatie orizontala pastrata)
 .marquee-tuning {
   overflow: hidden;
-  padding: 0.8rem 0;
-  background: var(--tuning-nav);
-  border-top: 2px solid var(--tuning-border-strong);
-  border-bottom: 2px solid var(--tuning-border-strong);
-  margin: 1.2rem auto;
-  max-width: 1500px;
-  border-radius: 12px;
+  padding: 0.7rem 0;
+  background: var(--clr-2);
+  border-top: 2px solid var(--clr-main);
+  border-bottom: 2px solid var(--clr-main);
+  margin: 1rem var(--margine-stanga-dreapta);
+  border-radius: 8px;
 }
 .marquee-tuning-track {
   display: inline-block;
   white-space: nowrap;
   padding-left: 100%;
   animation: marqueeMove 30s linear infinite;
-  font-family: 'Nunito', sans-serif;
-  font-weight: 700;
+  font-family: 'Madimi One', sans-serif;
   font-size: 1.05rem;
-  color: var(--tuning-primary);
+  color: var(--clr-dark-blue);
 }
-.marquee-tuning-track .sep {
-  color: var(--tuning-secondary);
-  margin: 0 1rem;
-  font-weight: 800;
-}
+.marquee-tuning-track .sep { color: var(--clr-main); margin: 0 1rem; font-weight: 800; }
 @keyframes marqueeMove {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-100%); }
 }
 
-// -------- Background fix slider (varianta light + subtila) ---------------
+// Background slider (Faza 3)
 .bg-fix-slider {
   background-size: cover;
   background-position: center;
   transition: background-image 1s ease;
   min-height: 30vh;
   position: relative;
-  border-radius: 16px;
+  border-radius: 8px;
   overflow: hidden;
-  margin: 1.2rem auto;
-  max-width: 1500px;
+  margin: 1rem var(--margine-stanga-dreapta);
 }
 .bg-fix-slider::after {
   content: ''; position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(224, 247, 250, 0.35), rgba(224, 247, 250, 0.85));
+  background: linear-gradient(180deg, rgba(242,250,250,0.3), rgba(242,250,250,0.85));
 }
 [data-tuning-theme="dark"] .bg-fix-slider::after {
-  background: linear-gradient(180deg, rgba(30, 34, 51, 0.4), rgba(30, 34, 51, 0.85));
+  background: linear-gradient(180deg, rgba(30,34,51,0.4), rgba(30,34,51,0.85));
 }
 .bg-fix-slider > .container-fluid { position: relative; z-index: 2; }
 
-// -------- Column-count (Faza 3, o singura coloana pe mic/mediu) --------------
+// Column count Faza 3
 .col-count-block {
   column-count: 3;
   column-gap: 2rem;
-  column-rule: 1px dashed var(--tuning-border-strong);
-  font-family: 'Nunito', sans-serif;
+  column-rule: 1px dashed var(--clr-main);
   line-height: 1.6;
-  color: var(--tuning-text);
+  color: var(--clr-dark-text);
 }
 @media (max-width: 991.98px) { .col-count-block { column-count: 1; column-rule: none; } }
 
-// ::selection customizat
-::selection {
-  background: var(--tuning-secondary);
-  color: #FFFFFF;
-  text-shadow: none;
-}
+::selection { background: var(--clr-main); color: var(--clr-dark-blue); }
 
-// -------- Product card - stil card scoala, alb cu border pastel --------------
+// -------- Product card ------------
 .product-card {
   position: relative;
   overflow: hidden;
-  border-radius: 16px;
-  border: 2px solid var(--tuning-border);
-  background: var(--tuning-surface);
+  border-radius: 8px;
+  border: 1px solid var(--clr-border-light);
+  background: var(--clr-white);
   height: 100%;
   display: flex;
   flex-direction: column;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 6px var(--clr-shadow-light);
 }
+[data-tuning-theme="dark"] .product-card { background: var(--tuning-surface); border-color: var(--tuning-border); }
 .product-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--tuning-shadow-hover);
-  border-color: var(--tuning-border-strong);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  border-color: var(--clr-main);
 }
 .product-card .card-media {
   position: relative;
   aspect-ratio: 4 / 3;
   overflow: hidden;
   background: #f5f5f5;
-  border-top-left-radius: 14px;
-  border-top-right-radius: 14px;
 }
 .product-card .card-media img,
 .product-card .card-media .carousel-item img {
@@ -166,9 +458,9 @@
 
 .product-card .badges-wrap {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  right: 10px;
+  top: 8px;
+  left: 8px;
+  right: 8px;
   display: flex;
   gap: 6px;
   justify-content: space-between;
@@ -176,32 +468,31 @@
   pointer-events: none;
 }
 .badge-tuning {
-  font-family: 'Nunito', sans-serif;
-  font-weight: 800;
+  font-family: 'Madimi One', sans-serif;
   font-size: 0.75rem;
-  padding: 0.3rem 0.65rem;
-  border-radius: 12px;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.15);
 }
-.badge-nou { background: var(--tuning-badge-new); color: #FFFFFF; }
-.badge-oferta { background: var(--tuning-timer); color: #FFFFFF; }
-.badge-cheapest { background: var(--tuning-badge-cheapest); color: #FFFFFF; }
+.badge-nou { background: var(--clr-main); color: var(--clr-dark-blue); }
+.badge-oferta { background: var(--tuning-timer); color: #FFF; }
+.badge-cheapest { background: var(--tuning-badge-cheapest); color: #FFF; }
 
 .product-card .card-body {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  padding: 1rem 1.1rem;
+  gap: 0.4rem;
+  padding: 0.9rem 1rem;
   flex: 1;
 }
 .product-card .card-title {
-  font-family: 'Bagel Fat One', cursive;
-  font-weight: 400;
-  font-size: 1.15rem;
-  color: var(--tuning-primary);
+  font-family: 'Madimi One', sans-serif;
+  font-size: 1.05rem;
+  color: var(--clr-dark-blue);
   margin: 0;
   line-height: 1.2;
 }
+[data-tuning-theme="dark"] .product-card .card-title { color: var(--tuning-primary); }
 .product-card .card-meta {
   font-size: 0.82rem;
   color: var(--tuning-text-muted);
@@ -210,59 +501,59 @@
   flex-wrap: wrap;
 }
 .product-card .card-price {
-  font-family: 'Bagel Fat One', cursive;
-  font-weight: 400;
-  font-size: 1.35rem;
-  color: var(--tuning-primary);
+  font-family: 'Madimi One', sans-serif;
+  font-size: 1.25rem;
+  color: var(--clr-dark-blue);
   margin-top: auto;
 }
+[data-tuning-theme="dark"] .product-card .card-price { color: var(--tuning-primary); }
 .product-card .card-price .old {
   color: var(--tuning-text-muted);
   text-decoration: line-through;
   font-size: 0.95rem;
   margin-right: 0.5rem;
   font-weight: 400;
-  font-family: 'Nunito', sans-serif;
 }
 
-// -------- Filter panel - box alb cu border ------------
+// Filter panel
 .filter-panel {
-  background: var(--tuning-surface);
-  border: 2px solid var(--tuning-border);
-  padding: 1.5rem 1.25rem;
-  border-radius: 16px;
+  background: var(--clr-white);
+  border: 1px solid var(--clr-border-light);
+  padding: 1.3rem 1.15rem;
+  border-radius: 8px;
   position: sticky;
   top: 20px;
   max-height: calc(100vh - 50px);
   overflow-y: auto;
-  box-shadow: var(--tuning-shadow);
+  box-shadow: 0 4px 6px var(--clr-shadow-light);
 }
+[data-tuning-theme="dark"] .filter-panel { background: var(--tuning-surface); border-color: var(--tuning-border); }
 .filter-panel h5 {
-  font-family: 'Bagel Fat One', cursive;
-  color: var(--tuning-primary);
+  font-family: 'Madimi One', sans-serif;
+  color: var(--clr-dark-blue);
   font-size: 1rem;
-  border-bottom: 2px solid var(--tuning-header-tab);
+  border-bottom: 2px solid var(--clr-main);
   padding-bottom: 0.4rem;
-  margin: 1rem 0 0.7rem;
+  margin: 0.9rem 0 0.6rem;
 }
 .filter-panel h5:first-child { margin-top: 0; }
-.filter-panel label { font-size: 0.85rem; font-weight: 700; color: var(--tuning-text); }
+.filter-panel label { font-size: 0.85rem; color: var(--clr-dark-text); }
+[data-tuning-theme="dark"] .filter-panel label { color: var(--tuning-text); }
 .filter-panel .range-value {
-  font-family: 'Bagel Fat One', cursive;
-  color: var(--tuning-secondary);
+  font-family: 'Madimi One', sans-serif;
+  color: var(--clr-main);
   font-size: 1rem;
 }
 
-// -------- Countdown timer oferta ------------
+// Timer oferta
 .oferta-timer {
-  font-family: 'Bagel Fat One', 'Nunito', monospace;
-  font-weight: 400;
+  font-family: 'Madimi One', monospace;
   color: var(--tuning-timer);
   font-size: 1rem;
   letter-spacing: 0.05em;
   background: #fff3e0;
-  padding: 0.15rem 0.5rem;
-  border-radius: 8px;
+  padding: 0.1rem 0.5rem;
+  border-radius: 6px;
   border: 1px solid var(--tuning-timer);
 }
 .oferta-timer.critical {
@@ -275,158 +566,130 @@
   to   { opacity: 0.7; transform: scale(1.05); }
 }
 
-// -------- Comparison Tray fix jos - lavender pastel -----------------
+// Comparison tray
 .comparison-tray {
   position: fixed;
   bottom: 0; left: 0; right: 0;
   z-index: 1050;
-  background: var(--tuning-nav);
-  border-top: 2px solid var(--tuning-border-strong);
+  background: var(--clr-5);
+  border-top: 3px solid var(--clr-dark-blue);
   padding: 0.9rem 1.25rem;
   transform: translateY(120%);
   transition: transform 0.35s ease;
-  color: var(--tuning-primary);
-  box-shadow: 0 -4px 20px rgba(40, 53, 147, 0.15);
+  color: var(--clr-dark-blue);
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
 }
 .comparison-tray.visible { transform: translateY(0); }
 .comparison-tray .tray-slot {
   width: 60px; height: 60px;
-  border: 2px dashed var(--tuning-primary);
-  border-radius: 12px;
+  border: 2px dashed var(--clr-dark-blue);
+  border-radius: 8px;
   display: flex; align-items: center; justify-content: center;
   overflow: hidden;
   position: relative;
-  background: rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.5);
 }
 .comparison-tray .tray-slot img { width: 100%; height: 100%; object-fit: cover; }
 .comparison-tray .tray-slot .remove-x {
   position: absolute; top: -6px; right: -6px;
-  width: 22px; height: 22px; background: var(--tuning-primary);
+  width: 22px; height: 22px; background: var(--clr-dark-blue);
   color: #FFF; border: none; border-radius: 50%; font-size: 0.75rem;
   cursor: pointer;
 }
 
-// -------- Orar widget (tabel style referinta) --------
+// Orar widget mini (folosit in footer)
 .orar-widget {
-  background: var(--tuning-surface);
-  border: 2px solid var(--tuning-border);
-  border-radius: 12px;
+  background: var(--clr-white);
+  border: 1px solid var(--clr-border-light);
+  border-radius: 8px;
   padding: 1rem 1.2rem;
-  box-shadow: var(--tuning-shadow);
+  box-shadow: 0 4px 6px var(--clr-shadow-light);
 }
+[data-tuning-theme="dark"] .orar-widget { background: var(--tuning-surface); border-color: var(--tuning-border); }
 .orar-widget h5 {
-  font-family: 'Bagel Fat One', cursive;
-  color: var(--tuning-primary);
+  color: var(--clr-dark-blue);
   margin-bottom: 0.6rem;
   font-size: 1.1rem;
 }
-.orar-widget .zi { 
-  padding: 0.35rem 0.5rem;
-  display: flex; 
-  justify-content: space-between; 
+.orar-widget .zi {
+  padding: 0.3rem 0.5rem;
+  display: flex; justify-content: space-between;
   font-size: 0.9rem;
-  border-radius: 6px;
-  margin-bottom: 2px;
+  border-radius: 4px;
 }
-.orar-widget .zi:nth-child(odd) { background: var(--tuning-surface-alt); }
-.orar-widget .zi.today { 
-  background: var(--tuning-header-tab); 
-  color: var(--tuning-primary); 
-  font-weight: 800;
+.orar-widget .zi:nth-child(odd) { background: var(--clr-bg-page); }
+[data-tuning-theme="dark"] .orar-widget .zi:nth-child(odd) { background: var(--tuning-surface-alt); }
+.orar-widget .zi.today {
+  background: var(--clr-3);
+  color: var(--clr-dark-blue);
+  font-weight: bold;
 }
-.orar-widget .status-open { color: var(--tuning-badge-cheapest); font-weight: 800; }
-.orar-widget .status-closed { color: var(--tuning-badge-new); font-weight: 800; }
+.orar-widget .status-open { color: var(--tuning-badge-cheapest); font-weight: bold; }
+.orar-widget .status-closed { color: #e53935; font-weight: bold; }
 
-// -------- Anunturi box (mint verde ca in referinta) --------
+// Anunturi box mint
 .anunt-box {
-  background: var(--tuning-surface-mint);
-  border: 2px solid #81c784;
-  border-radius: 12px;
-  padding: 1rem 1.3rem;
-  color: var(--tuning-text);
+  background: var(--clr-4);
+  border: 1px solid #81c784;
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  color: var(--clr-dark-text);
 }
-.anunt-box h5 {
-  font-family: 'Bagel Fat One', cursive;
-  color: var(--tuning-primary);
-  margin-bottom: 0.5rem;
-}
-[data-tuning-theme="dark"] .anunt-box { color: #FFFFFF; }
+[data-tuning-theme="dark"] .anunt-box { background: var(--tuning-surface-mint); color: var(--tuning-text); }
+.anunt-box h5 { color: var(--clr-dark-blue); margin-bottom: 0.5rem; }
+[data-tuning-theme="dark"] .anunt-box h5 { color: var(--tuning-primary); }
 
-// -------- Tabel detalii ----------
+// Tabel detalii
 .tabel-detalii {
   width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  color: var(--tuning-text);
-  background: var(--tuning-surface);
-  border-radius: 10px;
+  border-collapse: collapse;
+  color: var(--clr-dark-text);
+  background: var(--clr-white);
+  border-radius: 8px;
   overflow: hidden;
-  border: 2px solid var(--tuning-border);
+  border: 1px solid var(--clr-border-light);
 }
-.tabel-detalii thead {
-  background: var(--tuning-header-tab);
-}
+[data-tuning-theme="dark"] .tabel-detalii { background: var(--tuning-surface); color: var(--tuning-text); }
+.tabel-detalii thead { background: var(--clr-3); }
+[data-tuning-theme="dark"] .tabel-detalii thead { background: var(--tuning-header-tab); }
 .tabel-detalii thead th {
   padding: 0.7rem 0.9rem;
-  color: var(--tuning-primary);
-  font-family: 'Bagel Fat One', cursive;
-  font-size: 0.95rem;
-  border-bottom: 2px solid var(--tuning-border-strong);
+  color: var(--clr-dark-blue);
+  border-bottom: 2px solid var(--clr-dark-blue);
   text-align: left;
 }
 .tabel-detalii tbody td, .tabel-detalii tbody th {
-  padding: 0.65rem 0.9rem;
-  border-bottom: 1px solid var(--tuning-border);
+  padding: 0.6rem 0.85rem;
+  border-bottom: 1px solid var(--clr-border-light);
   text-align: left;
   vertical-align: top;
 }
-.tabel-detalii tbody tr:nth-child(odd) { background: var(--tuning-surface-alt); }
+.tabel-detalii tbody tr:nth-child(odd) { background: var(--clr-bg-page); }
+[data-tuning-theme="dark"] .tabel-detalii tbody tr:nth-child(odd) { background: var(--tuning-surface-alt); }
+.tabel-detalii tbody tr:hover { background: var(--clr-1); }
+[data-tuning-theme="dark"] .tabel-detalii tbody tr:hover { background: var(--tuning-header-tab); }
 .tabel-detalii tbody th {
-  font-weight: 700;
-  color: var(--tuning-primary);
+  font-weight: bold;
+  color: var(--clr-dark-blue);
   width: 34%;
 }
-
 @media (max-width: 767.98px) {
   .tabel-detalii thead { display: none; }
-  .tabel-detalii tr { display: block; margin-bottom: 1rem; border: 1px solid var(--tuning-border); border-radius: 8px; }
+  .tabel-detalii tr { display: block; margin-bottom: 1rem; border: 1px solid var(--clr-border-light); border-radius: 6px; }
   .tabel-detalii td, .tabel-detalii tbody th {
-    display: block;
-    width: 100% !important;
-    border-bottom: 1px dashed var(--tuning-border);
+    display: block; width: 100% !important;
+    border-bottom: 1px dashed var(--clr-border-light);
   }
   .tabel-detalii td::before {
     content: attr(data-label);
-    font-family: 'Bagel Fat One', cursive;
-    color: var(--tuning-primary);
+    color: var(--clr-dark-blue);
     font-size: 0.75rem;
     display: block;
     margin-bottom: 0.2rem;
   }
 }
 
-// -------- Theme switch - pastel ----
-.theme-switch {
-  display: flex;
-  gap: 0.35rem;
-  background: rgba(255,255,255,0.5);
-  padding: 0.3rem;
-  border-radius: 10px;
-  border: 1px solid var(--tuning-border-strong);
-}
-.theme-switch button {
-  background: transparent;
-  border: none;
-  color: var(--tuning-primary);
-  padding: 0.35rem 0.55rem;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s;
-}
-.theme-switch button.active { background: var(--tuning-primary); color: #FFF; }
-.theme-switch button:hover:not(.active) { background: rgba(255,255,255,0.8); }
-
-// -------- Fade-in / stagger animations (pastrate) ---
+// Fade-in
 .reveal {
   opacity: 0;
   transform: translateY(20px);
@@ -434,76 +697,73 @@
 }
 @keyframes revealIn { to { opacity: 1; transform: translateY(0); } }
 
-// -------- Back to top button (ca in referinta) -----
-.back-to-top {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  width: 46px;
-  height: 46px;
-  background: var(--tuning-primary);
-  color: #FFFFFF;
-  border: none;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(40, 53, 147, 0.35);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s, transform 0.3s, background 0.2s;
-  z-index: 1049;
-  font-size: 1.2rem;
-}
-.back-to-top.visible {
-  opacity: 1;
-  visibility: visible;
-}
-.back-to-top:hover {
-  background: var(--tuning-secondary);
-  transform: translateY(-3px);
-}
-
-// -------- Utility overrides -------------------------------------------------
-.text-primary-tuning { color: var(--tuning-primary) !important; }
-.bg-surface-tuning { background: var(--tuning-surface) !important; }
-.border-primary-tuning { border-color: var(--tuning-primary) !important; }
-
-// btn-tuning devine simplu btn-primary style
+// btn-tuning (buton principal simplu)
 .btn-tuning, .btn-tuning-outline {
   transform: none !important;
   text-transform: none !important;
-  font-family: 'Nunito', sans-serif !important;
-  font-weight: 700 !important;
-  border-radius: 10px !important;
+  font-family: 'Madimi One', sans-serif !important;
+  font-weight: 400 !important;
+  border-radius: 6px !important;
   letter-spacing: 0 !important;
   padding: 0.5rem 1.1rem;
 }
-.btn-tuning > *, .btn-tuning-outline > * {
-  display: inline;
-  transform: none !important;
-}
+.btn-tuning > *, .btn-tuning-outline > * { display: inline; transform: none !important; }
 .btn-tuning {
-  background: var(--tuning-primary);
+  background: var(--clr-dark-blue);
   color: #FFFFFF;
-  border: 2px solid var(--tuning-primary);
-  transition: all 0.2s ease;
+  border: 2px solid var(--clr-dark-blue);
+  transition: all 0.3s ease;
 }
 .btn-tuning:hover {
-  background: var(--tuning-secondary);
-  border-color: var(--tuning-secondary);
-  color: #FFFFFF;
+  background: var(--clr-main);
+  border-color: var(--clr-main);
+  color: var(--clr-dark-blue);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(126, 87, 194, 0.35);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 .btn-tuning-outline {
   background: transparent;
-  color: var(--tuning-primary);
-  border: 2px solid var(--tuning-primary);
+  color: var(--clr-dark-blue);
+  border: 2px solid var(--clr-dark-blue);
 }
 .btn-tuning-outline:hover {
-  background: var(--tuning-primary);
+  background: var(--clr-dark-blue);
   color: #FFFFFF;
   transform: translateY(-2px);
 }
+
+// Sectiuni produse home (adaugate la finalul paginii)
+.home-produse-section {
+  background: var(--clr-white);
+  border: 1px solid var(--clr-border-light);
+  border-radius: 8px;
+  padding: 1.5rem 1.8rem;
+  margin: 1rem var(--margine-stanga-dreapta);
+  box-shadow: 0 4px 6px var(--clr-shadow-light);
+}
+[data-tuning-theme="dark"] .home-produse-section { background: var(--tuning-surface); border-color: var(--tuning-border); }
+.home-produse-section h2 {
+  color: var(--clr-dark-blue);
+  border-bottom: 2px solid var(--clr-main);
+  padding-bottom: 6px;
+  margin-bottom: 15px;
+}
+
+// Address footer (original)
+address#contact {
+  font-style: normal;
+  line-height: 1.7;
+}
+address#contact strong { color: var(--clr-dark-blue); font-size: 1.05rem; display: inline-block; margin-bottom: 6px; }
+address#contact a { color: var(--clr-dark-blue); text-decoration: underline; }
+address#contact a:hover { color: var(--clr-main); }
+address#contact iframe { margin-top: 10px; border-radius: 8px; }
+
+footer {
+  padding: var(--padding-zone) var(--margine-stanga-dreapta);
+  background-color: var(--clr-2);
+  border-top: 4px solid var(--clr-main);
+  color: var(--clr-dark-text);
+  margin-top: 2rem;
+}
+[data-tuning-theme="dark"] footer { background-color: var(--tuning-nav); color: var(--tuning-text); }

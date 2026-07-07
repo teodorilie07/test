@@ -1,57 +1,57 @@
-<nav class="navbar navbar-expand-lg navbar-tuning" data-testid="navbar-main">
-  <div class="container-fluid px-3 px-lg-4">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-main" aria-expanded="false" aria-label="Toggle nav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="nav-main">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-          <a class="nav-link <%= currentPath === '/' ? 'active' : '' %>" href="/" data-testid="nav-home">
-            <i class="bi bi-house-fill"></i> Acasă
-          </a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle <%= currentPath === '/produse' ? 'active' : '' %>" href="/produse" role="button" data-bs-toggle="dropdown" data-testid="nav-produse">
-            <i class="bi bi-images"></i> Galerii
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/produse" data-testid="menu-cat-all">Toate categoriile</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <% categorii.forEach(function(c) { %>
-              <li>
-                <a class="dropdown-item" href="/produse?categorie=<%= encodeURIComponent(c) %>" data-testid="menu-cat-<%= c.toLowerCase() %>">
-                  <i class="bi bi-chevron-right"></i> <%= c %>
-                </a>
-              </li>
-            <% }); %>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link <%= currentPath === '/seturi' ? 'active' : '' %>" href="/seturi" data-testid="nav-seturi">
-            <i class="bi bi-box2-heart-fill"></i> Despre Noi
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#orar-widget" data-testid="nav-orar">
-            <i class="bi bi-person-plus-fill"></i> Înregistrare
-          </a>
-        </li>
+<nav id="nav-principal" data-testid="navbar-main">
+  <ul class="meniu">
+    <li class="item-acasa">
+      <a href="/" class="<%= currentPath === '/' ? 'active' : '' %>" data-testid="nav-home">
+        <i class="fa-solid fa-house"></i> <span>Acasă</span>
+      </a>
+      <ul class="submeniu">
+        <li><a href="/#welcome">Bine ați venit</a></li>
+        <li><a href="/#promotii">Promoții</a></li>
+        <li><a href="/#zona2">Orar Lucru</a></li>
       </ul>
-
-      <div class="d-flex gap-2 align-items-center">
-        <!-- Theme switch -->
-        <div class="theme-switch" data-testid="theme-switch">
-          <button data-theme="light" data-testid="theme-btn-light" title="Light pastel" class="active">
-            <i class="bi bi-sun-fill"></i>
-          </button>
-          <button data-theme="peach" data-testid="theme-btn-industrial" title="Peach warm">
-            <i class="bi bi-cup-hot-fill"></i>
-          </button>
-          <button data-theme="dark" data-testid="theme-btn-dark" title="Dark cozy">
-            <i class="bi bi-moon-stars-fill"></i>
-          </button>
-        </div>
+    </li>
+    <li>
+      <a href="/produse" class="<%= currentPath === '/produse' ? 'active' : '' %>" data-testid="nav-produse">
+        <i class="fa-solid fa-images"></i> <span>Galerii</span>
+      </a>
+      <ul class="submeniu">
+        <li><a href="/produse" data-testid="menu-cat-all">Toate produsele</a></li>
+        <% categorii.forEach(function(c) { %>
+          <li>
+            <a href="/produse?categorie=<%= encodeURIComponent(c) %>" data-testid="menu-cat-<%= c.toLowerCase() %>">
+              <%= c %>
+            </a>
+          </li>
+        <% }); %>
+      </ul>
+    </li>
+    <li>
+      <a href="/produse" data-testid="nav-produse-direct">
+        <i class="fa-solid fa-cart-shopping"></i> <span>Produse</span>
+      </a>
+    </li>
+    <li>
+      <a href="/seturi" class="<%= currentPath === '/seturi' ? 'active' : '' %>" data-testid="nav-seturi">
+        <i class="fa-solid fa-box-open"></i> <span>Seturi</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" data-testid="nav-inregistrare">
+        <i class="fa-solid fa-user-plus"></i> <span>Înregistrare</span>
+      </a>
+    </li>
+    <li style="margin-left:auto;">
+      <div class="theme-switch" data-testid="theme-switch">
+        <button data-theme="light" data-testid="theme-btn-light" title="Light pastel" class="active">
+          <i class="fa-solid fa-sun"></i>
+        </button>
+        <button data-theme="peach" data-testid="theme-btn-industrial" title="Peach warm">
+          <i class="fa-solid fa-mug-hot"></i>
+        </button>
+        <button data-theme="dark" data-testid="theme-btn-dark" title="Dark cozy">
+          <i class="fa-solid fa-moon"></i>
+        </button>
       </div>
-    </div>
-  </div>
+    </li>
+  </ul>
 </nav>
